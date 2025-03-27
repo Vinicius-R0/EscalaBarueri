@@ -1,16 +1,15 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground } from 'react-native';
 
 export default function Login() {
   return (
-    <View style={styles.container}>
 
-      <View style={styles.containerLogo}>
+   <View style={styles.container}>
+      <ImageBackground source={require('../components/images/loginbackground.png')} style={styles.logoimage}>
         <Image source={require('../components/images/logobarueri.png')} />
-
         <Text style={styles.titulo}>Escala<br></br>Barueri</Text>
-      </View>
-
+      </ImageBackground>
     </View>
+  
   );
 }
 
@@ -21,11 +20,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    containerLogo:{
+
+    logoimage:{
+        margin: 0,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 100,
         flexDirection: 'column',
+        width: '100%',
+        height: '70%',
     },
     titulo:{
         fontSize: 30,
