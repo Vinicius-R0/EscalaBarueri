@@ -15,18 +15,11 @@ export default function Login() {
 
       <View style={styles.inputContainer}>
 
-        <Text style={styles.tituloInput}> LOGIN </Text>
+        <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
 
         <TextInput style={styles.Input} 
-        placeholder='Número de Matrícula'
-        placeholderTextColor={'#288B94'}
-        keyboardType='numeric'>
-        </TextInput>
-
-        <TextInput style={styles.Input}
-        placeholder='Senha'
-        placeholderTextColor={'#288B94'}
-        keyboardType='numeric'>
+        placeholder='E-mail'
+        placeholderTextColor={'#288B94'}>
         </TextInput>
 
         <TouchableOpacity style={styles.botaoInput} >
@@ -34,7 +27,7 @@ export default function Login() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.trocarInput} >
-          <Text style={styles.textTrocarInput}> ESQUECI MINHA SENHA </Text>
+          <Text style={styles.textTrocarInput}> CONTINUAR COM TELEFONE </Text>
         </TouchableOpacity>
       
       </View>
@@ -45,9 +38,7 @@ export default function Login() {
 
 const styles = StyleSheet.create({
     Container:{
-        flex: 1,
-        margin: 0,
-        alignItems: 'center',
+        flex: 1
     },
     fundoContainer:{
         position: 'absolute',
