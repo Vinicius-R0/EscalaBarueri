@@ -5,13 +5,15 @@ import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
 
+
 export default function Telefone() {
     const [modalVisible, setModalVisible] = useState(false);
 
-    function VerificarTelefone(){
+    function CodigoModal(){
 
       setModalVisible(true);
     }
+
   return (
 
    <View style={styles.Container}>
@@ -39,12 +41,12 @@ export default function Telefone() {
         placeholderTextColor={colors.blue}>
         </TextInput>
 
-        <TouchableOpacity style={styles.botaoInput} onPress={VerificarTelefone} >
+        <TouchableOpacity style={styles.botaoInput} onPress={CodigoModal} >
           <Text style={styles.textBotaoInput}> ENVIAR CÓDIGO </Text>
         </TouchableOpacity>
 
         <Modal visible={modalVisible} animationType='fade' transparent={true}>
-          <Verificacao />
+          <Verificacao handleClose={() => setModalVisible(false)}/>
         </Modal>
 
         <Link href={'/email'} style={styles.trocarInput} >

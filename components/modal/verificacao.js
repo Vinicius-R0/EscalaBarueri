@@ -1,11 +1,20 @@
+import { TouchableOpacity } from "react-native"
 import { StyleSheet, View, Text } from "react-native"
 
 
-export default function Verificacao() {
+export default function Verificacao(handleClose) {
     return(
         <View style={styles.Container}>
             <Text> TESTE MODAL </Text>
+       
+
+
+        
+                <TouchableOpacity onPress={handleClose}>
+                    <Text>Voltar</Text>
+                </TouchableOpacity>
         </View>
+        
     )
 }
 
