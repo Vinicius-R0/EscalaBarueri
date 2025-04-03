@@ -1,13 +1,16 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
+import colors from '../constants/colors';
+import { Ionicons } from '@expo/vector-icons';
+import { Link, router } from 'expo-router';
 
-export default function Login() {
+export default function Telefone() {
   return (
 
    <View style={styles.Container}>
-      <ImageBackground source={require('../components/images/loginbackground.png')} style={styles.fundoContainer} />
+      <ImageBackground source={require('../components/images/background.png')} style={styles.fundoContainer} />
 
       <View style={styles.logoImage}>
-        <Image source={require('../components/images/logobarueri.png')} />
+        <Image source={require('../components/images/logo.png')} />
         <Text style={styles.Titulo}>Escala</Text>
         <Text style={styles.Titulo}>Barueri</Text> 
       </View>
@@ -15,20 +18,26 @@ export default function Login() {
 
       <View style={styles.inputContainer}>
 
-        <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
+      <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+          <Pressable style={styles.arrowBack}
+          onPress={() => {router.back()}}>
+            <Ionicons name='arrow-back' size={24} color={colors.blue}/>
+          </Pressable>
+          <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
+        </View>
 
         <TextInput style={styles.Input} 
         placeholder='Número de telefone'
-        placeholderTextColor={'#288B94'}>
+        placeholderTextColor={colors.blue}>
         </TextInput>
 
         <TouchableOpacity style={styles.botaoInput} >
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.trocarInput} >
+        <Link href={'/email'} style={styles.trocarInput} >
           <Text style={styles.textTrocarInput}> CONTINUAR COM EMAIL </Text>
-        </TouchableOpacity>
+        </Link>
       
       </View>
     </View>
@@ -50,24 +59,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logoImage:{
-       backgroundColor: '#003B40FF4',
         margin: 0,
         justifyContent: 'flex-start',
         alignItems: 'center',
         flexDirection: 'column',
         width: '100%',
-        height: '40%',
+        height: '40%'
     },
     Titulo:{
         fontSize: 50,
         fontWeight: 'regular',
-        color: '#FFFFFFFF',
+        color: colors.white,
         FlexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'Montserrat',
         letterSpacing: 8,
-        textAlign: 'center',
+        textAlign: 'center'
     },
     inputContainer:{
       flex: 1,
@@ -76,37 +84,45 @@ const styles = StyleSheet.create({
         borderTopRightRadius: '20%',
         borderTopLeftRadius: '20%',
         paddingHorizontal: 25,
-        backgroundColor: '#FFFFFFFF',
+        backgroundColor: colors.white,
         width: '100%',
-        height: '100%',
+        height: '100%'
     },
     tituloInput:{
         fontSize: 30,
-        fontWeight: 'bold',
+        fontWeight: '900',
         marginBottom: 30,
-        color: '#288B94',
-        fontFamily: 'Montserrat',
+        color: colors.blue
     },
     Input:{
-        placeholderTextColor: '#288B94',
+        placeholderTextColor: colors.blue,
         width: 300,
         height: 50,
         marginBottom: 20,
         paddingHorizontal: 10,
         borderWidth: 1,
-        borderColor: '#288B94',
+        borderColor: colors.blue,
         borderRadius: 20,
-        marginBottom: 40,
+        marginBottom: 40
     },
     botaoInput:{
         width: 300,
         height: 50,
-        backgroundColor: '#288B94',
+        backgroundColor: colors.blue,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
-        borderRadius: 20
+        borderRadius: 20,
+
+         // iOS Shadow
+                    shadowColor: colors.black,
+                    shadowOffset: { width: 5, height: 7 },
+                    shadowOpacity: 0.76,
+                    shadowRadius: 3.84,
+        
+                    // Android Shadow
+                    elevation: 10,
     },
     textBotaoInput:{
         color: 'white',
@@ -116,13 +132,13 @@ const styles = StyleSheet.create({
         fontWeight: 500
     },
     textTrocarInput:{
-        color: '#288B94',
+        color: colors.blue,
         fontFamily: 'Montserrat',
         letterSpacing: 5,
         fontSize: 10,
         fontWeight: 'regular',
         textDecorationLine: 'underline',
-        underlineColor: '#288B94',  
+        underlineColor: colors.blue
       },
   }
 );
