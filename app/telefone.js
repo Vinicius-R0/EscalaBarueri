@@ -1,9 +1,17 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable, Modal } from 'react-native';
+import { useState } from 'react'
+import { Verificacao } from '../components/modal/verificacao';
 import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
 
 export default function Telefone() {
+    const [modalVisible, setModalVisible] = useState(false);
+
+    function VerificarTelefone(){
+
+      setModalVisible(true);
+    }
   return (
 
    <View style={styles.Container}>
@@ -31,9 +39,13 @@ export default function Telefone() {
         placeholderTextColor={colors.blue}>
         </TextInput>
 
-        <TouchableOpacity style={styles.botaoInput} >
-          <Text style={styles.textBotaoInput}> ENTRAR </Text>
+        <TouchableOpacity style={styles.botaoInput} onPress={VerificarTelefone} >
+          <Text style={styles.textBotaoInput}> ENVIAR CÓDIGO </Text>
         </TouchableOpacity>
+
+        <Modal visible={modalVisible} animationType='fade' transparent={true}>
+          <Verificacao />
+        </Modal>
 
         <Link href={'/email'} style={styles.trocarInput} >
           <Text style={styles.textTrocarInput}> CONTINUAR COM EMAIL </Text>
@@ -50,13 +62,13 @@ const styles = StyleSheet.create({
         flex: 1
     },
     fundoContainer:{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: '30%',
-        justifyContent: 'center',
-        alignItems: 'center',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     logoImage:{
         margin: 0,
@@ -84,7 +96,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: '20%',
         borderTopLeftRadius: '20%',
         paddingHorizontal: 25,
-        backgroundColor: colors.white,
         width: '100%',
         height: '100%'
     },

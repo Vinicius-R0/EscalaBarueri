@@ -1,10 +1,12 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
-
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import colors from '../constants/colors';
 
 
+
 export default function Login() {
+   
+
   return (
 
    <View style={styles.Container}>
@@ -38,6 +40,7 @@ export default function Login() {
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </TouchableOpacity>
 
+
         <Link href='email'style={styles.trocarInput}>
             <Text style={styles.textTrocarInput}> ESQUECI MINHA SENHA </Text>
         </Link>
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        bottom: '30%',
+        bottom: 0,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -91,7 +94,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: '20%',
         borderTopLeftRadius: '20%',
         paddingHorizontal: 25,
-        backgroundColor: colors.white,
         width: '100%',
         height: '100%',
     },

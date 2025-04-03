@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         flex: 1
     },
     fundoContainer:{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: '30%',
-        justifyContent: 'center',
-        alignItems: 'center',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     logoImage:{
         margin: 0,
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: '20%',
         borderTopLeftRadius: '20%',
         paddingHorizontal: 25,
-        backgroundColor: colors.white,
         width: '100%',
         height: '100%',
     },
