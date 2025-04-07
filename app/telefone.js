@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable, Modal } from 'react-native';
 import { useState } from 'react'
-import { Verificacao } from '../components/modal/verificacao';
+import  Verificacao  from '../components/modal/verificacao';
 import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
