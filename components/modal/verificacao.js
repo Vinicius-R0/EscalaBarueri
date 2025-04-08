@@ -1,28 +1,31 @@
 
-import { StyleSheet, View, Text,TouchableOpacity, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 import colors from "../../constants/colors";
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from "react-native-confirmation-code-field";
 import { useState } from "react";
+import { Platform } from "react-native";
 
 
+const CELL = 6;
 
-export default function Verificacao(handleClose) {
+export default function Verificacao({handleClose}) {
     const [code, setCode] = useState('');
-  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+  const ref = useBlurOnFulfill({code, cell: CELL});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
-    value,
-    setValue,
+    code,
+    setCode,
   });
     return(
-        <SafeAreaView style={styles.Container}>
-        <Text style={styles.tituloInput}>DIGITE CÓDIGO</Text>
+        <View style={styles.Container}>
+          <View style={styles.Content}>
+        <Text style={styles.tituloInput}>Insira o código</Text>
         <CodeField
           ref={ref}
           {...props}
             appear
-          value={value}
-          onChangeText={setValue}
-          cellCount={CELL_COUNT}
+          value={code}
+          onChangeText={setCode}
+          cellCount={CELL}
           rootStyle={styles.codeFieldRoot}
           keyboardType="number-pad"
           textContentType="oneTimeCode"
@@ -37,7 +40,17 @@ export default function Verificacao(handleClose) {
             </Text>
           )}
         />
-      </SafeAreaView>
+        <View style={styles.botaoArea}>
+          <Pressable style={styles.botaoInput} onPress={handleClose}>
+            <Text style={styles.textBotaoInput}> FECHAR </Text>
+          </Pressable>
+          
+          <Pressable style={styles.botaoInput} onPress={handleClose}>
+            <Text style={styles.textBotaoInput}> CONFIRMAR </Text>
+          </Pressable>
+        </View>
+        </View>
+      </View>
         
     )
 }
@@ -45,25 +58,62 @@ export default function Verificacao(handleClose) {
 const styles = StyleSheet.create({
     Container:{
         flex: 1, 
-        padding: 20
+        backgroundColor: colors.transparent,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-
+    Content:{
+        width: '80%',
+        height: '30%',
+        backgroundColor: colors.white,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     tituloInput:{
-        textAlign: 'center', fontSize: 30
+        textAlign: 'center', 
+        fontSize: 30,
+        color: colors.blue,
     },
     codeFieldRoot:{
         marginTop: 20
     },
     cell: {
-        width: 40,
+      margin: 8,
+        width: 30,
         height: 40,
         lineHeight: 38,
-        fontSize: 24,
-        borderWidth: 2,
-        borderColor: '#00000030',
+        fontSize: 25,
+        borderBottomWidth: 1,
+        borderColor: colors.blue,
         textAlign: 'center',
+        color: colors.blue,
     },
     focusCell: {
         borderColor: '#000',
     },
+    botaoArea:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        paddingHorizontal: 30,
+    },
+    botaoInput:{
+        width: 120,
+        height: 40,
+        backgroundColor: colors.blue,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+        borderRadius: 10,
+    },
+    textBotaoInput:{
+      color: 'white',
+      fontFamily: 'Montserrat',
+      fontWeight: 900,
+      letterSpacing: 2,
+    }
+    
 }) 

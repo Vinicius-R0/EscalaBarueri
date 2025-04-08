@@ -37,6 +37,7 @@ export default function Telefone() {
         </View>
 
         <TextInput style={styles.Input} 
+        keyboardType='numeric'
         placeholder='Número de telefone'
         placeholderTextColor={colors.blue}>
         </TextInput>

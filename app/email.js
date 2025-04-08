@@ -34,7 +34,7 @@ export default function Email() {
         </TextInput>
 
         <TouchableOpacity style={styles.botaoInput} >
-          <Text style={styles.textBotaoInput}> ENTRAR </Text>
+          <Text style={styles.textBotaoInput}> ENVIAR VERIFICAÇÃO </Text>
         </TouchableOpacity>
 
         <Link href='/telefone' style={styles.trocarInput} >
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     textBotaoInput:{
         color: 'white',
         fontFamily: 'Montserrat',
-        letterSpacing: 10,
+        letterSpacing: 2,
         fontSize: 20,
         fontWeight: 500
     },
