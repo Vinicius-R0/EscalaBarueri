@@ -1,14 +1,13 @@
 import { TouchableOpacity } from "react-native"
 import { StyleSheet, View, Text } from "react-native"
+import Telefone from "../../app/telefone"
 
 
 export default function Verificacao(handleClose) {
     return(
         <View style={styles.Container}>
-            <Text> TESTE MODAL </Text>
-       
 
-
+             <Text> TESTE MODAL </Text>
         
                 <TouchableOpacity onPress={handleClose}>
                     <Text>Voltar</Text>

@@ -18,7 +18,16 @@ export default function Layout() {
       options={{ headerShown: false }} 
       />
 
+      <Stack.Screen
+      name="verificacao"
+      options={{headerShown: false}}
+      
+      />
 
     </Stack>
+
+
+
+    
   )
 }

@@ -4,10 +4,13 @@ import { Verificacao } from '../components/modal/verificacao';
 import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
+import React from 'react';
+import Telefone from '../app/telefone';
 
 
 export default function Telefone() {
     const [modalVisible, setModalVisible] = useState(false);
+    
 
     function CodigoModal(){
 
@@ -58,6 +61,8 @@ export default function Telefone() {
   
   );
 }
+
+
 
 const styles = StyleSheet.create({
     Container:{
