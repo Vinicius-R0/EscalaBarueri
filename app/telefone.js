@@ -1,11 +1,10 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable, Modal } from 'react-native';
 import { useState } from 'react'
-import { Verificacao } from '../components/modal/verificacao';
+import  Verificacao  from '../components/modal/verificacao';
 import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
 import React from 'react';
-import Telefone from '../app/telefone';
 
 
 export default function Telefone() {
@@ -40,6 +39,7 @@ export default function Telefone() {
         </View>
 
         <TextInput style={styles.Input} 
+        keyboardType='numeric'
         placeholder='Número de telefone'
         placeholderTextColor={colors.blue}>
         </TextInput>
