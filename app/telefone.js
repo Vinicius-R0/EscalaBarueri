@@ -44,14 +44,11 @@ export default function Telefone() {
         placeholderTextColor={colors.blue}>
         </TextInput>
 
-        <TouchableOpacity style={styles.botaoInput} onPress={CodigoModal} >
+        <TouchableOpacity style={styles.botaoInput}>
           <Text style={styles.textBotaoInput}> ENVIAR CÓDIGO </Text>
         </TouchableOpacity>
 
-        <Modal visible={modalVisible} animationType='fade' transparent={true}>
-          <Verificacao handleClose={() => setModalVisible(false)}/>
-        </Modal>
-
+        
         <Link href={'/email'} style={styles.trocarInput} >
           <Text style={styles.textTrocarInput}> CONTINUAR COM EMAIL </Text>
         </Link>

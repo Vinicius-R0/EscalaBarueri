@@ -18,10 +18,10 @@ export default function Layout() {
       options={{ headerShown: false }} 
       />
 
+
       <Stack.Screen
-      name='../components/modal/verificacao'
-      options={{ headerShown: false}}
-      />
+      name='(app)'
+      options={{headerShown: false}}/>
 
 
     </Stack>

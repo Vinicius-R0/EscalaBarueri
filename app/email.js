@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextI
 import { Link, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons'
 import colors from '../constants/colors';
+import { goBack } from 'expo-router/build/global-state/routing';
 
 
 export default function Email() {
@@ -21,7 +22,7 @@ export default function Email() {
 
         <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
           <Pressable style={styles.arrowBack}
-          onPress={() => {router.back()}}>
+          onPress={() => {router.replace(goBack)}}>
             <Ionicons name='arrow-back' size={24} color={colors.blue}/>
           </Pressable>
           <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>

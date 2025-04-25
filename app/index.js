@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
-import { Link, router } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import colors from '../constants/colors';
 
 
 
 export default function Login() {
-   
+   const router = useRouter();
 
   return (
 
@@ -36,7 +36,7 @@ export default function Login() {
         </TextInput>
 
         <TouchableOpacity 
-        style={styles.botaoInput} >
+        style={styles.botaoInput} onPress={() => router.navigate('(app)')}>
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </TouchableOpacity>
 
