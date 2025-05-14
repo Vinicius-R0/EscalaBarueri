@@ -1,11 +1,12 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
-import { Link, router } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons'
 import colors from '../constants/colors';
-import { goBack } from 'expo-router/build/global-state/routing';
+
 
 
 export default function Email() {
+  const route = useRouter()
   return (
 
    <View style={styles.Container}>
@@ -20,11 +21,12 @@ export default function Email() {
 
       <View style={styles.inputContainer}>
 
-        <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-          <Pressable style={styles.arrowBack}
-          onPress={() => {router.replace(goBack)}}>
-            <Ionicons name='arrow-back' size={24} color={colors.blue}/>
+        <View style={{flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', alignContent: 'center'}}>
+
+          <Pressable style={styles.arrowBack} onPress={() => route.replace('login')}>
+              <Ionicons name='arrow-back' size={24} color={colors.blue}/>
           </Pressable>
+
           <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
         </View>
         
@@ -35,7 +37,7 @@ export default function Email() {
         </TextInput>
 
         <TouchableOpacity style={styles.botaoInput} >
-          <Text style={styles.textBotaoInput}> ENVIAR VERIFICAÇÃO </Text>
+          <Text style={styles.textBotaoInput}> VERIFICAR </Text>
         </TouchableOpacity>
 
         <Link href='/telefone' style={styles.trocarInput} >
@@ -71,13 +73,12 @@ const styles = StyleSheet.create({
     },
     Titulo:{
         fontSize: 50,
-        fontWeight: 'regular',
         color: colors.white,
         FlexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        fontFamily: 'Montserrat',
-        letterSpacing: 8,
+        fontFamily: 'Montserrat-Regular',
+        letterSpacing: 5,
         textAlign: 'center',
     },
     inputContainer:{
@@ -91,14 +92,16 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     tituloInput:{
-        fontSize: 30,
-        fontWeight: '900',
+        fontSize: 25,
+        fontFamily: 'Montserrat-Bold',
+        letterSpacing: 3,
         marginBottom: 30,
         marginTop: 30,
-        color: colors.blue
+        color: colors.blue,
     },
     Input:{
-        placeholderTextColor: '#c',
+        placeholderTextColor: colors.blue,
+        fontFamily: 'Inter-Regular',
         width: 300,
         height: 50,
         marginBottom: 20,
@@ -128,18 +131,16 @@ const styles = StyleSheet.create({
                     elevation: 10,
     },
     textBotaoInput:{
-        color: 'white',
-        fontFamily: 'Montserrat',
-        letterSpacing: 2,
+        color: colors.white,
+        fontFamily: 'Inter-Regular',
+        letterSpacing: 8,
         fontSize: 20,
-        fontWeight: 500
     },
     textTrocarInput:{
         color: colors.blue,
-        fontFamily: 'Montserrat',
-        letterSpacing: 5,
-        fontSize: 10,
-        fontWeight: 'regular',
+        fontFamily: 'Montserrat-Medium',
+        letterSpacing: 2,
+        fontSize: 12,
         textDecorationLine: 'underline',
         underlineColor: colors.blue,  
       },

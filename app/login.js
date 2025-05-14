@@ -5,7 +5,7 @@ import colors from '../constants/colors';
 
 
 export default function Login() {
-   const router = useRouter();
+   const route = useRouter();
 
   return (
 
@@ -36,7 +36,7 @@ export default function Login() {
         </TextInput>
 
         <TouchableOpacity 
-        style={styles.botaoInput} onPress={() => router.navigate('(app)')}>
+        style={styles.botaoInput} onPress={() => {route.replace('/(app)')}}>
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </TouchableOpacity>
 
@@ -78,13 +78,12 @@ const styles = StyleSheet.create({
     },
     Titulo:{
         fontSize: 50,
-        fontWeight: 'regular',
         color: colors.white,
         FlexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        fontFamily: 'Montserrat',
-        letterSpacing: 8,
+        fontFamily: 'Montserrat-Regular',
+        letterSpacing: 5,
         textAlign: 'center',
     },
     inputContainer:{
@@ -99,12 +98,14 @@ const styles = StyleSheet.create({
     },
     tituloInput:{
         fontSize: 30,
-        fontWeight: '900',
+        fontFamily: 'Montserrat-Bold',
+        letterSpacing: 5,
         marginBottom: 30,
         color: colors.blue
     },
     Input:{
         placeholderTextColor: colors.blue,
+        fontFamily: 'Inter-Regular',
         width: 300,
         height: 50,
         marginBottom: 20,
@@ -134,18 +135,16 @@ const styles = StyleSheet.create({
             elevation: 10,
     },
     textBotaoInput:{
-        color: 'white',
-        fontFamily: 'Montserrat',
-        letterSpacing: 10,
+        color: colors.white,
+        fontFamily: 'Inter-Regular',
+        letterSpacing: 8,        
         fontSize: 20,
-        fontWeight: 500
     },
     textTrocarInput:{
         color: colors.blue,
-        fontFamily: 'Montserrat',
-        letterSpacing: 5,
-        fontSize: 10,
-        fontWeight: 'regular',
+        fontFamily: 'Montserrat-Medium',
+        fontSize: 12,
+        letterSpacing: 2,
         textDecorationLine: 'underline',
         underlineColor: colors.blue,  
       },
