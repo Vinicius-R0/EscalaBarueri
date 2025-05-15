@@ -57,6 +57,26 @@ export default function Escale() {
           markingType={'custom'}
         />
 
+
+        <View style={styles.DetailsContainer}>
+          <View>
+            <Text>Folgas</Text>
+            <View> <Text></Text>Dias: 5 - 12 - 19 - 26</View>
+          </View>
+
+          <View>
+            <Text> Feriados</Text>
+            <View> <Text>Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas)</Text></View>
+          </View>
+
+          <View>
+            <Text>Trabalho</Text>
+            <View> <Text> Horário: 8h - 18h</Text></View>
+          </View>
+        </View>
+
+        
+
       </View>
 
 
