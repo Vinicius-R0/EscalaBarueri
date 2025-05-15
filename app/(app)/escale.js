@@ -58,26 +58,54 @@ export default function Escale() {
         />
 
 
-        <View style={styles.DetailsContainer}>
-          <View>
-            <Text>Folgas</Text>
-            <View> <Text></Text>Dias: 5 - 12 - 19 - 26</View>
-          </View>
-
-          <View>
-            <Text> Feriados</Text>
-            <View> <Text>Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas)</Text></View>
-          </View>
-
-          <View>
-            <Text>Trabalho</Text>
-            <View> <Text> Horário: 8h - 18h</Text></View>
-          </View>
-        </View>
-
-        
-
+    <View style={{
+      margin: 10,
+      marginTop: 30,
+      flexDirection: 'column',
+      gap: 10
+    }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems:'center' }}>
+      <View style={{
+        backgroundColor: colors.blueDark,
+        borderRadius: 10,
+      }}>
+        <Text style={{
+          fontFamily: 'Montserrat-Medium',
+          fontSize: 18,
+          padding: 10,
+          
+        }}>
+          Folgas</Text>
+      </View>   
+        <View style={{
+          backgroundColor: colors.blueLight,
+          borderTopRightRadius: 10,
+          borderBottomRightRadius:10
+        }}> <Text style={{
+          fontFamily: 'Montserrat-Medium',
+          fontSize: 14,
+          padding: 7
+        }}> Dias: 5 - 12 - 19 - 26 </Text> 
       </View>
+      </View>
+
+      <View>
+        <Text> Feriados </Text>
+      </View>
+        <View> 
+          <Text> Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text> 
+      </View>
+      
+
+      <View>
+        <Text> Trabalho </Text>
+        <View> <Text> Horário: 8h - 18h </Text> </View>
+      </View>
+    </View>
+
+
+
+  </View>
 
 
     </ScrollView>
