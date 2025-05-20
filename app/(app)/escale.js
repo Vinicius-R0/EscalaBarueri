@@ -27,8 +27,6 @@ export default function Escale() {
           headerStyle={{
             backgroundColor: colors.gray,
             borderRadius: 20,
-
-
           }}
 
           theme={{
@@ -162,28 +160,31 @@ export default function Escale() {
         </View>
       </View>
 
-      <View style={styles.notificationContainer}>
-        <Text style={styles.notificationContainerTitle}> Esacala Detalhada</Text>
+      <View style={styles.DetailsContainer}>
+        <Text style={styles.DetailsContainerTitle}> Esacala Detalhada</Text>
 
-        <View style={styles.notificationContent}>
+        <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Local: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium' }}> Secretaria de Mobilidade Urbana</Text>
         </View>
 
-        <View style={styles.notificationContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Atualização </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Olá, Rogério da Silva Oliveira</Text>
-          <Text style={{ fontFamily: 'Montserrat-Regular' }}>
-            sua escala foi atualizada, verifique se necessário,
-            para que não haja problema com horários ou dias trabalhados.
-          </Text>
-
-          <View style={{ justifyContent: 'center', alignItems: 'flex-end' }}>
-            <Text style={{ fontFamily: 'Montserrat-regular' }}>25/04/2025</Text>
-          </View>
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Escala de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> 6 X 1 - Escala Semanal</Text>
         </View>
-      </View>
 
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Horário de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> (h ás 18h - 10 horas de trabalho)</Text>
+        </View>
+
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Dia(s) de Folga: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Quarta-Feira</Text>
+        </View>
+
+       
+        </View>
 
 
     </ScrollView>
@@ -211,35 +212,38 @@ const styles = StyleSheet.create({
   Content: {
     margin: 15
   },
-  notificationContainer: {
+  DetailsContainer: {
     flex: 1,
-    gap: 10,
     margin: 20,
     borderRadius: 10,
     alignItems: 'center',
+    gap: 15,
     
   },
-  notificationContainerTitle: {
+  DetailsContainerTitle: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 17,
-    margin: 10
+    paddingHorizontal: 102,
+    paddingVertical: 5,
+    backgroundColor: colors.gray,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10
   },
-  notificationContent: {
-    margin: 0,
-    flex: 1,
+  DetailsContent: {
     backgroundColor: colors.white,
-    gap: 10,
     justifyContent: 'center',
     borderBottomEndRadius: 10,
     borderBottomStartRadius: 10,
+    //borderRadius: 10,
     padding: 10,
+    width: '100%',
     // iOS Shadow
-    //shadowColor: colors.black,
-    //shadowOffset: { width: 5, height: 7 },
-    //shadowOpacity: 0.76,
-    //shadowRadius: 3.84,
+    shadowColor: colors.black,
+    shadowOffset: { width: 5, height: 7 },
+    shadowOpacity: 0.76,
+    shadowRadius: 3.84,
 
     // Android Shadow
-    elevation: 10,
+    elevation: 5,
   },
 })
