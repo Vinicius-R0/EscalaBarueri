@@ -2,8 +2,11 @@ export default {
     white:'#ffffff',
     black: '#000000',
     blue:'#12577b',
-    blueLight: '#A9CFE5',
+    blueLight: '#12567B91',
     blueDark: '#021B33',
     gray: '#DFDFDF',
-    green:'#63BE4B'
+    grayLight: '#DFDFDF85',
+    green:'#63BE4B',
+    yellow: '#FFFF00',
+    yellowLight: '#FFFFAC'
 };

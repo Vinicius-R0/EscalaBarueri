@@ -42,7 +42,8 @@ export default function Escale() {
             textDayHeaderFontFamily: 'Montserrat-SemiBold',
             textDayHeaderFontSize: 14,
             textDayFontFamily: 'Montserrat-SemiBold',
-            todayTextColor: colors.black
+            todayTextColor: colors.black,
+            
           }}
 
           hideExtraDays='true'
@@ -58,54 +59,131 @@ export default function Escale() {
         />
 
 
-    <View style={{
-      margin: 10,
-      marginTop: 30,
-      flexDirection: 'column',
-      gap: 10
-    }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems:'center' }}>
-      <View style={{
-        backgroundColor: colors.blueDark,
-        borderRadius: 10,
-      }}>
-        <Text style={{
-          fontFamily: 'Montserrat-Medium',
-          fontSize: 18,
-          padding: 10,
-          
-        }}>
-          Folgas</Text>
-      </View>   
         <View style={{
-          backgroundColor: colors.blueLight,
-          borderTopRightRadius: 10,
-          borderBottomRightRadius:10
-        }}> <Text style={{
-          fontFamily: 'Montserrat-Medium',
-          fontSize: 14,
-          padding: 7
-        }}> Dias: 5 - 12 - 19 - 26 </Text> 
-      </View>
+          marginTop: 30,
+          flexDirection: 'column',
+          gap: 10
+        }}>
+
+          <View style={{
+            flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+          }}>
+            <View style={{
+              backgroundColor: colors.blueLight,
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row-reverse',
+              borderRadius: 10,
+              justifyContent: 'center',
+              alignItems: 'center',
+
+            }}>
+              <Text style={{
+                fontFamily: 'Montserrat-Medium',
+                fontSize: 14,
+                padding: 7,
+                marginHorizontal: 80
+              }}> Dias: 5 - 12 - 19 - 26 </Text>
+              <View style={{
+                backgroundColor: colors.blue,
+                borderRadius: 10,
+              }}>
+                <Text style={{
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: 18,
+                  padding: 7,
+                  color: colors.white
+                }}> Folgas</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={{
+            flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+          }}>
+            <View style={{
+              backgroundColor: colors.yellowLight,
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row-reverse',
+              borderRadius: 10,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <Text style={{
+                fontFamily: 'Montserrat-Medium',
+                fontSize: 14,
+                padding: 7,
+                marginHorizontal: 1,
+              }}> Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text>
+              <View style={{
+                backgroundColor: colors.yellow,
+                borderRadius: 10,
+              }}>
+                <Text style={{
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: 16,
+                  paddingVertical: 7
+                }}> Feriados </Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={{
+            flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+          }}>
+            <View style={{
+              backgroundColor: colors.grayLight,
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row-reverse',
+              borderRadius: 10,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <Text style={{
+                fontFamily: 'Montserrat-Medium',
+                fontSize: 14,
+                padding: 7,
+                marginHorizontal: 85
+              }}> Horário: 8h - 18h </Text>
+              <View style={{
+                backgroundColor: colors.gray,
+                borderRadius: 10,
+              }}>
+                <Text style={{
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: 16,
+                  paddingVertical: 7
+                }}> Trabalho </Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
 
-      <View>
-        <Text> Feriados </Text>
+      <View style={styles.notificationContainer}>
+        <Text style={styles.notificationContainerTitle}> Esacala Detalhada</Text>
+
+        <View style={styles.notificationContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Local: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Secretaria de Mobilidade Urbana</Text>
+        </View>
+
+        <View style={styles.notificationContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Atualização </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Olá, Rogério da Silva Oliveira</Text>
+          <Text style={{ fontFamily: 'Montserrat-Regular' }}>
+            sua escala foi atualizada, verifique se necessário,
+            para que não haja problema com horários ou dias trabalhados.
+          </Text>
+
+          <View style={{ justifyContent: 'center', alignItems: 'flex-end' }}>
+            <Text style={{ fontFamily: 'Montserrat-regular' }}>25/04/2025</Text>
+          </View>
+        </View>
       </View>
-        <View> 
-          <Text> Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text> 
-      </View>
-      
 
-      <View>
-        <Text> Trabalho </Text>
-        <View> <Text> Horário: 8h - 18h </Text> </View>
-      </View>
-    </View>
-
-
-
-  </View>
 
 
     </ScrollView>
@@ -115,7 +193,7 @@ export default function Escale() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
   Navbar: {
     padding: 20,
@@ -131,6 +209,37 @@ const styles = StyleSheet.create({
     color: colors.white
   },
   Content: {
+    margin: 15
+  },
+  notificationContainer: {
+    flex: 1,
+    gap: 10,
+    margin: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    
+  },
+  notificationContainerTitle: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 17,
     margin: 10
-  }
+  },
+  notificationContent: {
+    margin: 0,
+    flex: 1,
+    backgroundColor: colors.white,
+    gap: 10,
+    justifyContent: 'center',
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
+    padding: 10,
+    // iOS Shadow
+    //shadowColor: colors.black,
+    //shadowOffset: { width: 5, height: 7 },
+    //shadowOpacity: 0.76,
+    //shadowRadius: 3.84,
+
+    // Android Shadow
+    elevation: 10,
+  },
 })
