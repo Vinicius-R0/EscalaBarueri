@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
-import { Link, useRouter } from 'expo-router';
+import { Link, useRouter, } from 'expo-router';
 import colors from '../constants/colors';
+import { useRef } from 'react';
 
 
 
@@ -26,7 +27,8 @@ export default function Login() {
         <TextInput style={styles.Input} 
         placeholder='Número de Matrícula'
         placeholderTextColor={colors.blue}
-        keyboardType='numeric'>
+        keyboardType='numeric'
+        ref={()=> useRef}>
         </TextInput>
 
         <TextInput style={styles.Input}
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
     },
     Input:{
         placeholderTextColor: colors.blue,
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'Montserrat-Regular',
         width: 300,
         height: 50,
         marginBottom: 20,
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
     },
     textBotaoInput:{
         color: colors.white,
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'Montserrat-Regular',
         letterSpacing: 8,        
         fontSize: 20,
     },

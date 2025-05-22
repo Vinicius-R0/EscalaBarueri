@@ -31,7 +31,7 @@ export default function Home() {
             <Text style={{ color: colors.white, fontFamily: 'Montserrat-Medium', fontSize: 15 }}> Perfil </Text>
           </Pressable>
 
-          <Pressable style={styles.buttonConfig}>
+          <Pressable style={styles.buttonConfig} onPress={() => route.push('/config')}>
             <FontAwesome name='gear' color={colors.white} size={35} />
             <Text style={{ color: colors.white, fontFamily: 'Montserrat-Medium', fontSize: 15 }}> Config </Text>
           </Pressable>

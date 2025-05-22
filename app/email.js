@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     },
     Input:{
         placeholderTextColor: colors.blue,
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'Montserrat-Regular',
         width: 300,
         height: 50,
         marginBottom: 20,
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     },
     textBotaoInput:{
         color: colors.white,
-        fontFamily: 'Inter-Regular',
+        fontFamily: 'Montserrat-Regular',
         letterSpacing: 8,
         fontSize: 20,
     },

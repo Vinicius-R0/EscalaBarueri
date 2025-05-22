@@ -51,6 +51,10 @@ export default function MainLayout() {
       <Stack.Screen
       name="escale"
       />
+
+      <Stack.Screen
+      name="config"
+      />
     </Stack>
   )
 }

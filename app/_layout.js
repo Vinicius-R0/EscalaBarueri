@@ -7,9 +7,6 @@ export default function Layout() {
     'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
     'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
-    'Inter-Regular': require('../assets/fonts/Inter_18pt-Regular.ttf'),
-    'Inter-Bold': require('../assets/fonts/Inter_18pt-Bold.ttf'),
-    'Inter-SemiBold': require('../assets/fonts/Inter_18pt-SemiBold.ttf')
   });
   if(!fontLoad){
     return <ActivityIndicator size="large" color="#f4511e"/>;

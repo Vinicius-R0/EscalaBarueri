@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import colors from "../../constants/colors";
-import { Calendar, LocaleConfig, WeekCalendar } from "react-native-calendars";
+import { Calendar } from "react-native-calendars";
 import { goBack } from "expo-router/build/global-state/routing";
 import { useRouter } from "expo-router";
 //import ptBR from "../../utils/localeCalendarConfig";
