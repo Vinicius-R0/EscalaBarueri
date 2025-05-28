@@ -1,20 +1,21 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
-import colors from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, useRouter } from 'expo-router';
-import React from 'react';
+import {useTheme} from 'styled-components';
+
 
 
 
 export default function Telefone() {
-  const route = useRouter()
+  const route = useRouter();
+ 
   return (
 
    <View style={styles.Container}>
-      <ImageBackground source={require('../components/images/background.png')} style={styles.fundoContainer} />
+      <ImageBackground source={require('../assets/images/background.png')} style={styles.fundoContainer} />
 
       <View style={styles.logoImage}>
-        <Image source={require('../components/images/logo.png')} />
+        <Image source={require('../assets/images/logo.png')} />
         <Text style={styles.Titulo}>Escala</Text>
         <Text style={styles.Titulo}>Barueri</Text> 
       </View>
@@ -25,7 +26,7 @@ export default function Telefone() {
       <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
           <Pressable style={styles.arrowBack}
           onPress={() => route.replace('login')}>
-            <Ionicons name='arrow-back' size={24} color={colors.blue}/>
+            <Ionicons name='arrow-back' size={24} color={'#12577b'}/>
           </Pressable>
           <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
         </View>
@@ -33,7 +34,7 @@ export default function Telefone() {
         <TextInput style={styles.Input} 
         keyboardType='numeric'
         placeholder='Número de telefone'
-        placeholderTextColor={colors.blue}>
+        placeholderTextColor={'#12577b'}>
         </TextInput>
 
         <TouchableOpacity style={styles.botaoInput}>
@@ -50,9 +51,6 @@ export default function Telefone() {
   
   );
 }
-
-
-
 const styles = StyleSheet.create({
     Container:{
            flex: 1
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
        },
        Titulo:{
            fontSize: 50,
-           color: colors.white,
+           color: 'white',
            FlexDirection: 'column',
            justifyContent: 'center',
            alignItems: 'center',
@@ -100,24 +98,24 @@ const styles = StyleSheet.create({
            letterSpacing: 3,
            marginBottom: 30,
            marginTop: 30,
-           color: colors.blue,
+           color: '#12577b',
        },
        Input:{
-           placeholderTextColor: colors.blue,
+           placeholderTextColor: '#12577b',
            fontFamily: 'Montserrat-Regular',
            width: 300,
            height: 50,
            marginBottom: 20,
            paddingHorizontal: 10,
            borderWidth: 1,
-           borderColor: colors.blue,
+           borderColor: '#12577b',
            borderRadius: 20,
            marginBottom: 40,
        },
        botaoInput:{
            width: 300,
            height: 50,
-           backgroundColor: colors.blue,
+           backgroundColor: '#12577b',
            borderRadius: 10,
            justifyContent: 'center',
            alignItems: 'center',
@@ -125,7 +123,7 @@ const styles = StyleSheet.create({
            borderRadius: 20,
    
             // iOS Shadow
-                       shadowColor: colors.black,
+                       shadowColor: 'black',
                        shadowOffset: { width: 5, height: 7 },
                        shadowOpacity: 0.76,
                        shadowRadius: 3.84,
@@ -134,19 +132,22 @@ const styles = StyleSheet.create({
                        elevation: 10,
        },
        textBotaoInput:{
-           color: colors.white,
+           color: 'white',
            fontFamily: 'Montserrat-Regular',
            letterSpacing: 8,
            fontSize: 20,
        },
        textTrocarInput:{
-           color: colors.blue,
+           color: '#12577b',
            fontFamily: 'Montserrat-Medium',
            letterSpacing: 2,
            fontSize: 12,
            textDecorationLine: 'underline',
-           underlineColor: colors.blue,  
+           underlineColor: '#12577b',  
          },
      }
    );
+
+
+
    

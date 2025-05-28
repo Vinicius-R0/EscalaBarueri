@@ -1,13 +1,15 @@
 import { Stack } from "expo-router"
-import color from "../../constants/colors"
 import { Image, Text, View } from "react-native"
+import { useTheme } from 'styled-components/native'
 
 export default function MainLayout() {
+  const {colors} = useTheme();
   return (
+   
   <Stack
     screenOptions={{
-      headerStyle: { backgroundColor: color.white },
-      headerTintColor: color.white,
+      headerStyle: { backgroundColor: colors.white },
+      headerTintColor: colors.white,
       headerBackVisible: false,
       headerTitle: () => (
         <View style={{
@@ -26,11 +28,11 @@ export default function MainLayout() {
               fontFamily: 'Montserrat-regular'
             }}> Secretaria de </Text>,
             <Text style={{
-              color: color.blue,
+              color: colors.blue,
               fontFamily: 'Montserrat-SemiBold'
             }}> MOBILIDADE URBANA</Text>
           </View>
-          <Image source={require('../../components/images/header.png')}
+          <Image source={require('../../assets/images/header.png')}
           />
         </View>
       ),

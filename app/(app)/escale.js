@@ -1,9 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import colors from "../../constants/colors";
+;
 import { Calendar } from "react-native-calendars";
 import { goBack } from "expo-router/build/global-state/routing";
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
+import {useTheme} from 'styled-components';
 //import ptBR from "../../utils/localeCalendarConfig";
 
 //LocaleConfig.locales["pt-br"] = ptBR;
@@ -11,7 +12,64 @@ import { useRouter } from "expo-router";
 
 
 export default function Escale() {
-  const route = useRouter()
+  const route = useRouter();
+const {colors} = useTheme();
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  Navbar: {
+    padding: 20,
+    flexDirection: 'row',
+    backgroundColor: colors.blue,
+    justifyContent: 'flex-start',
+    gap: 50,
+    alignItems: 'center'
+  },
+  NavbarText: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 32,
+    color: colors.white
+  },
+  Content: {
+    margin: 15
+  },
+  DetailsContainer: {
+    flex: 1,
+    margin: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    gap: 15,
+    
+  },
+  DetailsContainerTitle: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 17,
+    paddingHorizontal: 102,
+    paddingVertical: 5,
+    backgroundColor: colors.gray,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10
+  },
+  DetailsContent: {
+    backgroundColor: colors.white,
+    justifyContent: 'center',
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
+    //borderRadius: 10,
+    padding: 10,
+    width: '100%',
+    // iOS Shadow
+    shadowColor: colors.black,
+    shadowOffset: { width: 5, height: 7 },
+    shadowOpacity: 0.76,
+    shadowRadius: 3.84,
+
+    // Android Shadow
+    elevation: 5,
+  },
+})
   return (
     <ScrollView style={styles.Container}>
       <View style={styles.Navbar}>
@@ -44,7 +102,7 @@ export default function Escale() {
             
           }}
 
-          hideExtraDays='true'
+          hideExtraDays="true"
           markedDates={{
             '2025-03-03': { selected: true, customStyles: { container: { backgroundColor: 'yellow' }, text: { color: 'black', fontWeight: 'bold' } } },
             '2025-03-04': { selected: true, customStyles: { container: { backgroundColor: 'yellow' }, text: { color: 'black', fontWeight: 'bold' } } },
@@ -175,7 +233,7 @@ export default function Escale() {
 
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Horário de Trabalho: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> (h ás 18h - 10 horas de trabalho)</Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium' }}> 8h ás 18h - 10 horas de trabalho</Text>
         </View>
 
         <View style={styles.DetailsContent}>
@@ -191,59 +249,3 @@ export default function Escale() {
   )
 }
 
-const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-  Navbar: {
-    padding: 20,
-    flexDirection: 'row',
-    backgroundColor: colors.blue,
-    justifyContent: 'flex-start',
-    gap: 50,
-    alignItems: 'center'
-  },
-  NavbarText: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 32,
-    color: colors.white
-  },
-  Content: {
-    margin: 15
-  },
-  DetailsContainer: {
-    flex: 1,
-    margin: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    gap: 15,
-    
-  },
-  DetailsContainerTitle: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 17,
-    paddingHorizontal: 102,
-    paddingVertical: 5,
-    backgroundColor: colors.gray,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10
-  },
-  DetailsContent: {
-    backgroundColor: colors.white,
-    justifyContent: 'center',
-    borderBottomEndRadius: 10,
-    borderBottomStartRadius: 10,
-    //borderRadius: 10,
-    padding: 10,
-    width: '100%',
-    // iOS Shadow
-    shadowColor: colors.black,
-    shadowOffset: { width: 5, height: 7 },
-    shadowOpacity: 0.76,
-    shadowRadius: 3.84,
-
-    // Android Shadow
-    elevation: 5,
-  },
-})

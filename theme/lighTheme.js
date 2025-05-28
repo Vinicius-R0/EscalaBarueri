@@ -1,4 +1,6 @@
-export default {
+
+export const lightTheme = {
+  colors: {
     white:'#ffffff',
     black: '#000000',
     blue:'#12577b',
@@ -9,4 +11,5 @@ export default {
     green:'#63BE4B',
     yellow: '#FFFF00',
     yellowLight: '#FFFFAC'
-};
+  }
+}

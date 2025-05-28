@@ -1,43 +1,50 @@
 import { Stack } from "expo-router";
-import {useFonts} from 'expo-font';
+import { useFonts } from 'expo-font';
 import { ActivityIndicator } from "react-native";
+import { ThemeProvider } from '../theme/Theme';
+
 export default function Layout() {
   const [fontLoad] = useFonts({
-    'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
-    'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
-    'Montserrat-Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
-    'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
+    'Montserrat-Regular': require('../constants/fonts/Montserrat-Regular.ttf'),
+    'Montserrat-Bold': require('../constants/fonts/Montserrat-Bold.ttf'),
+    'Montserrat-Medium': require('../constants/fonts/Montserrat-Medium.ttf'),
+    'Montserrat-SemiBold': require('../constants/fonts/Montserrat-SemiBold.ttf'),
   });
-  if(!fontLoad){
-    return <ActivityIndicator size="large" color="#f4511e"/>;
+  if (!fontLoad) {
+    return <ActivityIndicator size="large" color="#f4511e" />;
   }
-  return(
-    <Stack> 
-      <Stack.Screen 
-      name="login" 
-      options={{ headerShown: false }} 
-      />
-
-      <Stack.Screen 
-      name="email" 
-      options={{ headerShown: false }} 
-      />
-
-      <Stack.Screen 
-      name="telefone" 
-      options={{ headerShown: false }} 
-      />
 
 
-      <Stack.Screen
-      name='(app)'
-      options={{headerShown: false}}/>
+  return (
+     <ThemeProvider>
+      <Stack>
+        <Stack.Screen
+          name='login'
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name='email'
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name='telefone'
+          options={{ headerShown: false }}
+        />
 
 
-    </Stack>
+        <Stack.Screen
+          name='(app)'
+          options={{ headerShown: false }} />
 
 
-
+      </Stack>
+      </ThemeProvider>
     
+
+
+
+
   )
 }
