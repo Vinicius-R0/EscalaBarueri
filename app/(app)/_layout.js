@@ -8,8 +8,8 @@ export default function MainLayout() {
    
   <Stack
     screenOptions={{
-      headerStyle: { backgroundColor: colors.white },
-      headerTintColor: colors.white,
+      headerStyle: { backgroundColor: colors.background },
+      headerTintColor: colors.defaultBlue,
       headerBackVisible: false,
       headerTitle: () => (
         <View style={{
@@ -25,14 +25,15 @@ export default function MainLayout() {
 
           }}>
             <Text style={{
-              fontFamily: 'Montserrat-regular'
+              fontFamily: 'Montserrat-regular',
+              color: colors.onBackground
             }}> Secretaria de </Text>,
             <Text style={{
-              color: colors.blue,
+              color: colors.defaultBlue,
               fontFamily: 'Montserrat-SemiBold'
             }}> MOBILIDADE URBANA</Text>
           </View>
-          <Image source={require('../../assets/images/header.png')}
+          <Image style={{borderColor: colors.onBackground }}source={require('../../assets/images/header.png')}
           />
         </View>
       ),

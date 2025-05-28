@@ -11,12 +11,12 @@ const {colors} = useTheme();
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: colors.white
+    backgroundColor: colors.background
   },
   Navbar: {
     padding: 20,
     flexDirection: 'row',
-    backgroundColor: colors.blue,
+    backgroundColor: colors.contentsBlue,
     justifyContent: 'flex-start',
     alignItems: 'center',
     gap: 100
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   NavbarText: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 32,
-    color: colors.white
+    color: colors.onBackground
   },
   Content: {
     marginTop: 20,
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   },
   Circle: {
     padding: 40,
-    borderWidth: 1,
-    borderColor: colors.black,
+    borderWidth: 3,
+    borderColor: colors.defaultBlue,
     borderRadius: 150,
     backgroundColor: colors.gray,
     justifyContent: 'center',
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   return (
     <View style={styles.Container}>
       <View style={styles.Navbar}>
-        <Ionicons name='arrow-back' size={30} color={colors.white} onPress={() => route.back(goBack)} />
+        <Ionicons name='arrow-back' size={30} color={colors.onBackground} onPress={() => route.back(goBack)} />
         <Text style={styles.NavbarText}> Perfil</Text>
       </View>
 
@@ -63,19 +63,19 @@ const styles = StyleSheet.create({
         </View>
 
         <View style={styles.UserContainer}>
-          <Text style={{ fontFamily: 'Montserrat-Regular', fontSize: 22, marginBottom: 15}}>ROGER DA SILVA OLIVEIRA</Text>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.blue}}>N° de Matrícula:</Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18}}>45658</Text>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.blue}}>Telefone:</Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18}}>(11) 94987 - 5366</Text>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.blue}}>Email:</Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, marginBottom: 25}}>roger.oliveira66@gmail.com</Text>
+          <Text style={{ fontFamily: 'Montserrat-Regular', fontSize: 22, marginBottom: 15,color: colors.onBackground}}>ROGER DA SILVA OLIVEIRA</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultBlue}}>N° de Matrícula:</Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.onBackground}}>45658</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultBlue}}>Telefone:</Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.onBackground}}>(11) 94987 - 5366</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultBlue}}>Email:</Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, marginBottom: 25, color: colors.onBackground}}>roger.oliveira66@gmail.com</Text>
 
           <Pressable style={{ backgroundColor: colors.green, padding: 7, borderRadius: 10, marginBottom: 15}}>
-            <Text style={{ fontFamily: 'Montserrat-Semibold', fontSize: 18, color:colors.white}}>ATUALIZAR DADOS</Text>
+            <Text style={{ fontFamily: 'Montserrat-Semibold', fontSize: 18, color:colors.onBackground}}>ATUALIZAR DADOS</Text>
           </Pressable>
-          <Pressable style={{backgroundColor: colors.blue, padding: 7, borderRadius: 10}}>
-            <Text style={{ fontFamily: 'Montserrat-Semibold', fontSize: 18, color:colors.white}}>REDEFINIR SENHA</Text>
+          <Pressable style={{backgroundColor: colors.defaultBlue, padding: 7, borderRadius: 10}}>
+            <Text style={{ fontFamily: 'Montserrat-Semibold', fontSize: 18, color:colors.onBackground}}>REDEFINIR SENHA</Text>
           </Pressable>
         </View>
 

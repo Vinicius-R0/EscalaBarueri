@@ -17,12 +17,12 @@ const {colors} = useTheme();
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
   },
   Navbar: {
     padding: 20,
     flexDirection: 'row',
-    backgroundColor: colors.blue,
+    backgroundColor: colors.contentsBlue,
     justifyContent: 'flex-start',
     gap: 50,
     alignItems: 'center'
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   NavbarText: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 32,
-    color: colors.white
+    color: colors.onBackground
   },
   Content: {
     margin: 15
@@ -48,20 +48,19 @@ const styles = StyleSheet.create({
     fontSize: 17,
     paddingHorizontal: 102,
     paddingVertical: 5,
-    backgroundColor: colors.gray,
+    backgroundColor: colors.contentsGray,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10
   },
   DetailsContent: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.contentsWhite,
     justifyContent: 'center',
-    borderBottomEndRadius: 10,
-    borderBottomStartRadius: 10,
+    borderRadius: 10,
     //borderRadius: 10,
     padding: 10,
     width: '100%',
     // iOS Shadow
-    shadowColor: colors.black,
+    shadowColor: '#000000',
     shadowOffset: { width: 5, height: 7 },
     shadowOpacity: 0.76,
     shadowRadius: 3.84,
@@ -73,7 +72,7 @@ const styles = StyleSheet.create({
   return (
     <ScrollView style={styles.Container}>
       <View style={styles.Navbar}>
-        <Ionicons name="arrow-back" size={30} color={colors.white} onPress={() => route.back(goBack)} />
+        <Ionicons name="arrow-back" size={30} color={colors.onBackground} onPress={() => route.back(goBack)} />
         <Text style={styles.NavbarText}> Minha Escala</Text>
       </View>
 
@@ -83,22 +82,22 @@ const styles = StyleSheet.create({
           style={{ gap: 10, borderRadius: 20 }}
 
           headerStyle={{
-            backgroundColor: colors.gray,
+            backgroundColor: colors.calendar,
             borderRadius: 20,
           }}
 
           theme={{
             textMonthFontFamily: 'Montserrat-SemiBold',
             textMonthFontSize: 18,
-            monthTextColor: colors.blue,
-            arrowColor: colors.blue,
-            dayTextColor: colors.black,
-            calendarBackground: colors.gray,
-            textSectionTitleColor: colors.black,
+            monthTextColor: colors.defaultBlue,
+            arrowColor: colors.defaultBlue,
+            dayTextColor: colors.onBackground,
+            calendarBackground: colors.calendar,
+            textSectionTitleColor: colors.onBackground,
             textDayHeaderFontFamily: 'Montserrat-SemiBold',
             textDayHeaderFontSize: 14,
             textDayFontFamily: 'Montserrat-SemiBold',
-            todayTextColor: colors.black,
+            todayTextColor: colors.onBackground,
             
           }}
 
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
             <View style={{
-              backgroundColor: colors.blueLight,
+              backgroundColor: colors.onBlue,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               flexDirection: 'row-reverse',
@@ -138,17 +137,18 @@ const styles = StyleSheet.create({
                 fontFamily: 'Montserrat-Medium',
                 fontSize: 14,
                 padding: 7,
-                marginHorizontal: 80
+                marginHorizontal: 80,
+                color: colors.onBackground
               }}> Dias: 5 - 12 - 19 - 26 </Text>
               <View style={{
-                backgroundColor: colors.blue,
+                backgroundColor: colors.defaultBlue,
                 borderRadius: 10,
               }}>
                 <Text style={{
                   fontFamily: 'Montserrat-Medium',
                   fontSize: 18,
                   padding: 7,
-                  color: colors.white
+                  color: colors.onBackground
                 }}> Folgas</Text>
               </View>
             </View>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
             <View style={{
-              backgroundColor: colors.yellowLight,
+              backgroundColor: colors.onYellow,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               flexDirection: 'row-reverse',
@@ -171,15 +171,17 @@ const styles = StyleSheet.create({
                 fontSize: 14,
                 padding: 7,
                 marginHorizontal: 1,
+                color: colors.onBackground
               }}> Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text>
               <View style={{
                 backgroundColor: colors.yellow,
                 borderRadius: 10,
               }}>
                 <Text style={{
-                  fontFamily: 'Montserrat-Medium',
+                  fontFamily: 'Montserrat-SemiBold',
                   fontSize: 16,
-                  paddingVertical: 7
+                  paddingVertical: 7,
+                  color: colors.onBackground
                 }}> Feriados </Text>
               </View>
             </View>
@@ -189,7 +191,7 @@ const styles = StyleSheet.create({
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
             <View style={{
-              backgroundColor: colors.grayLight,
+              backgroundColor: colors.onGray,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               flexDirection: 'row-reverse',
@@ -201,14 +203,15 @@ const styles = StyleSheet.create({
                 fontFamily: 'Montserrat-Medium',
                 fontSize: 14,
                 padding: 7,
-                marginHorizontal: 85
+                marginHorizontal: 85,
+                color: colors.onBackground
               }}> Horário: 8h - 18h </Text>
               <View style={{
                 backgroundColor: colors.gray,
                 borderRadius: 10,
               }}>
                 <Text style={{
-                  fontFamily: 'Montserrat-Medium',
+                  fontFamily: 'Montserrat-SemiBold',
                   fontSize: 16,
                   paddingVertical: 7
                 }}> Trabalho </Text>
@@ -222,23 +225,23 @@ const styles = StyleSheet.create({
         <Text style={styles.DetailsContainerTitle}> Esacala Detalhada</Text>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Local: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Secretaria de Mobilidade Urbana</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Local: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Secretaria de Mobilidade Urbana</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Escala de Trabalho: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> 6 X 1 - Escala Semanal</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Escala de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 6 X 1 - Escala Semanal</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Horário de Trabalho: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> 8h ás 18h - 10 horas de trabalho</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Horário de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 8h ás 18h - 10 horas de trabalho</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.blue }}> Dia(s) de Folga: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium' }}> Quarta-Feira</Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Dia(s) de Folga: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Quarta-Feira</Text>
         </View>
 
        

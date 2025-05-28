@@ -1,8 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { ThemeProvider as ThemeProviderStyled } from "styled-components/native";
 import {darkTheme} from './darkTheme'
 import {lightTheme} from './lighTheme'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const ThemeType = {
   light : 'light',
@@ -23,8 +23,25 @@ export const ThemeProvider = ({ children }) => {
   /* propiedade children (component filho) */
   const [theme, setTheme] = useState(ThemeType.light)
 
+useEffect(() => {
+  loadTheme()
+}, [])
+async function loadTheme() {
+  const savedTheme = await AsyncStorage.getItem('@theme');
+  if(savedTheme) {
+    setTheme(savedTheme)
+  }
+}
   function toggleTheme() {
- setTheme((prevTheme) => (prevTheme === ThemeType.light ? ThemeType.dark : ThemeType.light));
+    let selectTheme;
+ if (theme === ThemeType.light) {
+  selectTheme = ThemeType.dark
+ } else {
+  selectTheme = ThemeType.light
+ }
+
+ setTheme(selectTheme)
+AsyncStorage.setItem('@theme', selectTheme)
   }
 
 return(

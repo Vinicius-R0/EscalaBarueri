@@ -11,12 +11,13 @@ export default function Config() {
   const { colors } = useTheme();
   const styles = StyleSheet.create({
     Container: {
-      flex: 1
+      flex: 1,
+      backgroundColor: colors.background
     },
     Navbar: {
       padding: 20,
       flexDirection: 'row',
-      backgroundColor: colors.blue,
+      backgroundColor: colors.contentsBlue,
       justifyContent: 'flex-start',
       gap: 50,
       alignItems: 'center'
@@ -24,7 +25,7 @@ export default function Config() {
     NavbarText: {
       fontFamily: 'Montserrat-SemiBold',
       fontSize: 32,
-      color: colors.white
+      color: colors.onBackground
     },
     OptionsContainer: {
       gap: 20,
@@ -36,7 +37,7 @@ export default function Config() {
       gap: 30
     },
     IconsBorder: {
-      borderColor: colors.blue,
+      borderColor: colors.defaultBlue,
       borderWidth: 2,
       borderRadius: 100,
       padding: 10,
@@ -44,7 +45,8 @@ export default function Config() {
     },
     OptionText: {
       fontFamily: 'Montserrat-SemiBold',
-      fontSize: 20
+      fontSize: 20,
+      color: colors.onBackground
     }
   })
 
@@ -54,7 +56,7 @@ export default function Config() {
   return (
     <View style={styles.Container}>
       <View style={styles.Navbar}>
-        <Ionicons name="arrow-back" size={30} color={colors.white} onPress={() => route.back(goBack)} />
+        <Ionicons name="arrow-back" size={30} color={colors.onBackground} onPress={() => route.back(goBack)} />
         <Text style={styles.NavbarText}> Configurações </Text>
       </View>
 

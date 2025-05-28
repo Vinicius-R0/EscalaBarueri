@@ -1,15 +1,19 @@
-
 export const lightTheme = {
   colors: {
-    white:'#ffffff',
-    black: '#000000',
-    blue:'#12577b',
-    blueLight: '#12567B91',
+    background:'#ffffff',
+    onBackground: '#000000',
+    defaultBlue:'#12577b',
+    onBlue: '#12567B91',
+    contentsBlue: '#12577B',
     blueDark: '#021B33',
+    blueLight: '#A9CFE5',
     gray: '#DFDFDF',
-    grayLight: '#DFDFDF85',
+    onGray: '#DFDFDF85',
     green:'#63BE4B',
     yellow: '#FFFF00',
-    yellowLight: '#FFFFAC'
+    onYellow: '#FFFFAC',
+    contentsWhite: '#ffffff',
+    contentsGray: '#DFDFDF',
+    calendar: '#DFDFDF'
   }
 }
