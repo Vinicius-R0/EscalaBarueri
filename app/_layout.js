@@ -19,7 +19,7 @@ export default function Layout() {
      <ThemeProvider>
       <Stack>
         <Stack.Screen
-          name='login'
+          name='index'
           options={{ headerShown: false }}
         />
 

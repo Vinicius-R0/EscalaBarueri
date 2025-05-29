@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
             
           }}
 
-          hideExtraDays="true"
+          hideExtraDays='true'
           markedDates={{
             '2025-03-03': { selected: true, customStyles: { container: { backgroundColor: 'yellow' }, text: { color: 'black', fontWeight: 'bold' } } },
             '2025-03-04': { selected: true, customStyles: { container: { backgroundColor: 'yellow' }, text: { color: 'black', fontWeight: 'bold' } } },

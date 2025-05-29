@@ -38,7 +38,7 @@ export default function Login() {
         </TextInput>
 
         <TouchableOpacity
-          style={styles.botaoInput} onPress={() => { route.push('/(app)') }}>
+          style={styles.botaoInput} onPress={() => { route.push('/(app)', ) }}>
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </TouchableOpacity>
 

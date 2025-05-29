@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { SimpleLineIcons, Feather, FontAwesome, Octicons } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
 import {useTheme} from 'styled-components';
+import { goBack } from "expo-router/build/global-state/routing";
 
 
 
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
   return (
     <ScrollView style={styles.Container}>
       <View style={styles.Navbar}>
-        <SimpleLineIcons name="logout" color={colors.onBackground} size={30} onPress={() => route.navigate('/login')} />
+        <SimpleLineIcons name="logout" color={colors.onBackground} size={30} onPress={() => route.back(goBack)} />
         <Octicons name="bell" color={colors.onBackground} size={30} onPress={() => route.push('/notification')} />
       </View>
 

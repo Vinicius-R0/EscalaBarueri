@@ -4,7 +4,7 @@
     "slug": "MinhaEscala",
     "version": "1.0.0",
     "userInterfaceStyle": "automatic",
-    "scheme": "MinhaEscala",
+    "scheme": "minhaescala",
     "web": {
       "bundler": "metro",
       "output": "static",

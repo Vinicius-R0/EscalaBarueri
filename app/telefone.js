@@ -25,7 +25,7 @@ export default function Telefone() {
 
       <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
           <Pressable style={styles.arrowBack}
-          onPress={() => route.replace('login')}>
+          onPress={() => route.replace('/')}>
             <Ionicons name='arrow-back' size={24} color={'#12577b'}/>
           </Pressable>
           <Text style={styles.tituloInput}> REDEFINIR SENHA </Text>
