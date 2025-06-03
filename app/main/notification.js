@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 ;
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
-import {useTheme} from 'styled-components';
+import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
 
 export default function Notification() {

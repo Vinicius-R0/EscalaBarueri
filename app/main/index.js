@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 ;
 import { SimpleLineIcons, Feather, FontAwesome, Octicons } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
-import {useTheme} from 'styled-components';
+import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
 
 
@@ -116,26 +116,26 @@ const styles = StyleSheet.create({
     <ScrollView style={styles.Container}>
       <View style={styles.Navbar}>
         <SimpleLineIcons name="logout" color={colors.onBackground} size={30} onPress={() => route.back(goBack)} />
-        <Octicons name="bell" color={colors.onBackground} size={30} onPress={() => route.push('/notification')} />
+        <Octicons name="bell" color={colors.onBackground} size={30} onPress={() => route.push('/main/notification')} />
       </View>
 
       <Text style={styles.User}>Olá, Rogério!</Text>
 
       <View style={styles.buttonContainer}>
 
-        <Pressable style={styles.buttonCalendar} onPress={() => route.push('/escale')}>
+        <Pressable style={styles.buttonCalendar} onPress={() => route.push('/main/escale')}>
           <Feather name='calendar' color={'#000000'} size={100} />
           <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 20 }}> Minha Escala </Text>
         </Pressable>
 
         <View style={styles.buttonsRight}>
 
-          <Pressable style={styles.buttonProfile} onPress={() => route.push('/profile')}>
+          <Pressable style={styles.buttonProfile} onPress={() => route.push('/main/profile')}>
             <Feather name='user' color={colors.onBackground} size={40} />
             <Text style={{ color: colors.onBackground, fontFamily: 'Montserrat-Medium', fontSize: 15 }}> Perfil </Text>
           </Pressable>
 
-          <Pressable style={styles.buttonConfig} onPress={() => route.push('/config')}>
+          <Pressable style={styles.buttonConfig} onPress={() => route.push('/main/config')}>
             <FontAwesome name='gear' color={colors.onBackground} size={35} />
             <Text style={{ color: colors.onBackground, fontFamily: 'Montserrat-Medium', fontSize: 15 }}> Config </Text>
           </Pressable>

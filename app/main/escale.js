@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { goBack } from "expo-router/build/global-state/routing";
 import { useRouter } from 'expo-router';
-import {useTheme} from 'styled-components';
+import { useTheme } from 'styled-components/native';
 //import ptBR from "../../utils/localeCalendarConfig";
 
 //LocaleConfig.locales["pt-br"] = ptBR;
@@ -13,62 +13,82 @@ import {useTheme} from 'styled-components';
 
 export default function Escale() {
   const route = useRouter();
-const {colors} = useTheme();
-const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    backgroundColor: colors.background,
-  },
-  Navbar: {
-    padding: 20,
-    flexDirection: 'row',
-    backgroundColor: colors.contentsDefaultColor,
-    justifyContent: 'flex-start',
-    gap: 50,
-    alignItems: 'center'
-  },
-  NavbarText: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 32,
-    color: colors.onBackground
-  },
-  Content: {
-    margin: 15
-  },
-  DetailsContainer: {
-    flex: 1,
-    margin: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    gap: 15,
-    
-  },
-  DetailsContainerTitle: {
-    fontFamily: 'Montserrat-SemiBold',
-    fontSize: 17,
-    paddingHorizontal: 102,
-    paddingVertical: 5,
-    backgroundColor: colors.contentsGray,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10
-  },
-  DetailsContent: {
-    backgroundColor: colors.contentsWhite,
-    justifyContent: 'center',
-    borderRadius: 10,
-    //borderRadius: 10,
-    padding: 10,
-    width: '100%',
-    // iOS Shadow
-    shadowColor: '#000000',
-    shadowOffset: { width: 5, height: 7 },
-    shadowOpacity: 0.76,
-    shadowRadius: 3.84,
+  const { colors } = useTheme();
+  const styles = StyleSheet.create({
+    Container: {
+      flex: 1,
+      backgroundColor: colors.background,
+    },
+    Navbar: {
+      padding: 20,
+      flexDirection: 'row',
+      backgroundColor: colors.contentsDefaultColor,
+      justifyContent: 'flex-start',
+      gap: 50,
+      alignItems: 'center'
+    },
+    NavbarText: {
+      fontFamily: 'Montserrat-SemiBold',
+      fontSize: 32,
+      color: colors.onBackground
+    },
+    CalendarDetails: {
+      borderTopRightRadius: 10,
+      borderBottomRightRadius: 10,
+      flexDirection: 'row-reverse',
+      borderRadius: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    CalendarDetailsTitle: {
+      fontFamily: 'Montserrat-Medium',
+      fontSize: 18,
+      padding: 7,
+      color: colors.onBackground
+    },
+    CalendarDetailsContent: {
+      fontFamily: 'Montserrat-Medium',
+      fontSize: 14,
+      padding: 7,
+      marginHorizontal: 80,
+      color: colors.onBackground
+    },
+    Content: {
+      margin: 15
+    },
+    DetailsContainer: {
+      flex: 1,
+      margin: 20,
+      borderRadius: 10,
+      alignItems: 'center',
+      gap: 15,
+    },
+    DetailsContainerTitle: {
+      fontFamily: 'Montserrat-SemiBold',
+      fontSize: 17,
+      paddingHorizontal: 102,
+      paddingVertical: 5,
+      backgroundColor: colors.contentsGray,
+      borderTopLeftRadius: 10,
+      borderTopRightRadius: 10
+    },
+    DetailsContent: {
+      backgroundColor: colors.contentsWhite,
+      justifyContent: 'center',
+      borderRadius: 10,
+      //borderRadius: 10,
+      padding: 10,
+      width: '100%',
+      // iOS Shadow
+      shadowColor: '#000000',
+      shadowOffset: { width: 5, height: 7 },
+      shadowOpacity: 0.76,
+      shadowRadius: 3.84,
 
-    // Android Shadow
-    elevation: 5,
-  },
-})
+      // Android Shadow
+      elevation: 5,
+    },
+  })
   return (
     <ScrollView style={styles.Container}>
       <View style={styles.Navbar}>
@@ -98,7 +118,7 @@ const styles = StyleSheet.create({
             textDayHeaderFontSize: 14,
             textDayFontFamily: 'Montserrat-SemiBold',
             todayTextColor: colors.onBackground,
-            
+
           }}
 
           hideExtraDays='true'
@@ -123,33 +143,13 @@ const styles = StyleSheet.create({
           <View style={{
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
-            <View style={{
-              backgroundColor: colors.onDefaultColor,
-              borderTopRightRadius: 10,
-              borderBottomRightRadius: 10,
-              flexDirection: 'row-reverse',
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-
-            }}>
-              <Text style={{
-                fontFamily: 'Montserrat-Medium',
-                fontSize: 14,
-                padding: 7,
-                marginHorizontal: 80,
-                color: colors.onBackground
-              }}> Dias: 5 - 12 - 19 - 26 </Text>
+            <View style={styles.CalendarDetails} >
+              <Text style={styles.CalendarDetailsContent} > Dias: 5 - 12 - 19 - 26 </Text>
               <View style={{
                 backgroundColor: colors.defaultColor,
                 borderRadius: 10,
               }}>
-                <Text style={{
-                  fontFamily: 'Montserrat-Medium',
-                  fontSize: 18,
-                  padding: 7,
-                  color: colors.onBackground
-                }}> Folgas</Text>
+                <Text style={styles.CalendarDetailsTitle}> Folgas</Text>
               </View>
             </View>
           </View>
@@ -157,32 +157,13 @@ const styles = StyleSheet.create({
           <View style={{
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
-            <View style={{
-              backgroundColor: colors.onYellow,
-              borderTopRightRadius: 10,
-              borderBottomRightRadius: 10,
-              flexDirection: 'row-reverse',
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
-              <Text style={{
-                fontFamily: 'Montserrat-Medium',
-                fontSize: 14,
-                padding: 7,
-                marginHorizontal: 1,
-                color: colors.onBackground
-              }}> Dias: 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text>
+            <View style={styles.CalendarDetails}>
+              <Text style={styles.CalendarDetailsContent}> 3(Carnaval) - 4(Carnaval) - 5(Cinzas) </Text>
               <View style={{
                 backgroundColor: colors.yellow,
                 borderRadius: 10,
               }}>
-                <Text style={{
-                  fontFamily: 'Montserrat-SemiBold',
-                  fontSize: 16,
-                  paddingVertical: 7,
-                  color: colors.onBackground
-                }}> Feriados </Text>
+                <Text style={styles.CalendarDetailsTitle}> Feriados </Text>
               </View>
             </View>
           </View>
@@ -190,31 +171,13 @@ const styles = StyleSheet.create({
           <View style={{
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
-            <View style={{
-              backgroundColor: colors.onGray,
-              borderTopRightRadius: 10,
-              borderBottomRightRadius: 10,
-              flexDirection: 'row-reverse',
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
-              <Text style={{
-                fontFamily: 'Montserrat-Medium',
-                fontSize: 14,
-                padding: 7,
-                marginHorizontal: 85,
-                color: colors.onBackground
-              }}> Horário: 8h - 18h </Text>
+            <View style={styles.CalendarDetails}>
+              <Text style={styles.CalendarDetailsContent}> Horário: 8h - 18h </Text>
               <View style={{
                 backgroundColor: colors.gray,
                 borderRadius: 10,
               }}>
-                <Text style={{
-                  fontFamily: 'Montserrat-SemiBold',
-                  fontSize: 16,
-                  paddingVertical: 7
-                }}> Trabalho </Text>
+                <Text style={styles.CalendarDetailsTitle}> Trabalho </Text>
               </View>
             </View>
           </View>
@@ -222,33 +185,13 @@ const styles = StyleSheet.create({
           <View style={{
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
-            <View style={{
-              backgroundColor: colors.onDefaultColor,
-              borderTopRightRadius: 10,
-              borderBottomRightRadius: 10,
-              flexDirection: 'row-reverse',
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-
-            }}>
-              <Text style={{
-                fontFamily: 'Montserrat-Medium',
-                fontSize: 14,
-                padding: 7,
-                marginHorizontal: 80,
-                color: colors.onBackground
-              }}> Dias: 8 - 22 </Text>
+            <View style={styles.CalendarDetails}>
+              <Text style={styles.CalendarDetailsContent}> Dias: 8 - 22 </Text>
               <View style={{
                 backgroundColor: colors.defaultColor,
                 borderRadius: 10,
               }}>
-                <Text style={{
-                  fontFamily: 'Montserrat-Medium',
-                  fontSize: 18,
-                  padding: 7,
-                  color: colors.onBackground
-                }}> Jornada </Text>
+                <Text style={styles.CalendarDetailsTitle}> Jornada </Text>
               </View>
             </View>
           </View>
@@ -264,12 +207,12 @@ const styles = StyleSheet.create({
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Secretaria de Mobilidade Urbana</Text>
         </View>
 
-        
+
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Equipe: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Alpha Norte </Text>
         </View>
-        
+
 
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Escala de Trabalho: </Text>
@@ -286,18 +229,18 @@ const styles = StyleSheet.create({
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Quarta-Feira</Text>
         </View>
 
-        
+
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Feriados: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 3, 4, 5 </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Dias: 3 - 4 - 5 </Text>
         </View>
 
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Jornada Suplementar: </Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 8, 22 </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Dias: 8 - 22 </Text>
         </View>
-       
-        </View>
+
+      </View>
 
 
     </ScrollView>

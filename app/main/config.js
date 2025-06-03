@@ -1,7 +1,7 @@
 import { View, StyleSheet, Text, Switch } from "react-native";
 import { Ionicons, MaterialCommunityIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
-import { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
 import { useContext } from "react";
 import {ThemeContext, ThemeType} from '../../theme/Theme'
