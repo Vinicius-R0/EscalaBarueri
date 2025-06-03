@@ -218,6 +218,41 @@ const styles = StyleSheet.create({
               </View>
             </View>
           </View>
+
+          <View style={{
+            flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+          }}>
+            <View style={{
+              backgroundColor: colors.onDefaultColor,
+              borderTopRightRadius: 10,
+              borderBottomRightRadius: 10,
+              flexDirection: 'row-reverse',
+              borderRadius: 10,
+              justifyContent: 'center',
+              alignItems: 'center',
+
+            }}>
+              <Text style={{
+                fontFamily: 'Montserrat-Medium',
+                fontSize: 14,
+                padding: 7,
+                marginHorizontal: 80,
+                color: colors.onBackground
+              }}> Dias: 8 - 22 </Text>
+              <View style={{
+                backgroundColor: colors.defaultColor,
+                borderRadius: 10,
+              }}>
+                <Text style={{
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: 18,
+                  padding: 7,
+                  color: colors.onBackground
+                }}> Jornada </Text>
+              </View>
+            </View>
+          </View>
+
         </View>
       </View>
 
@@ -228,6 +263,13 @@ const styles = StyleSheet.create({
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Local: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Secretaria de Mobilidade Urbana</Text>
         </View>
+
+        
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Equipe: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Alpha Norte </Text>
+        </View>
+        
 
         <View style={styles.DetailsContent}>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Escala de Trabalho: </Text>
@@ -244,6 +286,16 @@ const styles = StyleSheet.create({
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Quarta-Feira</Text>
         </View>
 
+        
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Feriados: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 3, 4, 5 </Text>
+        </View>
+
+        <View style={styles.DetailsContent}>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Jornada Suplementar: </Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 8, 22 </Text>
+        </View>
        
         </View>
 
