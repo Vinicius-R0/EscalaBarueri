@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   Navbar: {
     padding: 20,
     flexDirection: 'row',
-    backgroundColor: colors.contentsBlue,
+    backgroundColor: colors.contentsDefaultColor,
     justifyContent: 'flex-start',
     gap: 50,
     alignItems: 'center'
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
           theme={{
             textMonthFontFamily: 'Montserrat-SemiBold',
             textMonthFontSize: 18,
-            monthTextColor: colors.defaultBlue,
-            arrowColor: colors.defaultBlue,
+            monthTextColor: colors.defaultColor,
+            arrowColor: colors.defaultColor,
             dayTextColor: colors.onBackground,
             calendarBackground: colors.calendar,
             textSectionTitleColor: colors.onBackground,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
             flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
           }}>
             <View style={{
-              backgroundColor: colors.onBlue,
+              backgroundColor: colors.onDefaultColor,
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               flexDirection: 'row-reverse',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
                 color: colors.onBackground
               }}> Dias: 5 - 12 - 19 - 26 </Text>
               <View style={{
-                backgroundColor: colors.defaultBlue,
+                backgroundColor: colors.defaultColor,
                 borderRadius: 10,
               }}>
                 <Text style={{
@@ -225,22 +225,22 @@ const styles = StyleSheet.create({
         <Text style={styles.DetailsContainerTitle}> Esacala Detalhada</Text>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Local: </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Local: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Secretaria de Mobilidade Urbana</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Escala de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Escala de Trabalho: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 6 X 1 - Escala Semanal</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Horário de Trabalho: </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Horário de Trabalho: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> 8h ás 18h - 10 horas de trabalho</Text>
         </View>
 
         <View style={styles.DetailsContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Dia(s) de Folga: </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Dia(s) de Folga: </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Quarta-Feira</Text>
         </View>
 

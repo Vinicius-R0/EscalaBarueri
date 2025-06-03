@@ -35,7 +35,7 @@ export default function Layout() {
 
 
         <Stack.Screen
-          name='(app)'
+          name='main'
           options={{ headerShown: false }} />
 
 

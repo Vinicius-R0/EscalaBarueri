@@ -2,9 +2,9 @@ export const darkTheme = {
   colors: {
     background:'#171717',
     onBackground: '#ffffff',
-    defaultBlue:'#12577b',
-    onBlue: '#12567B50',
-    contentsBlue: '#242C2D',
+    defaultColor:'#12577b',
+    onDefaultColor: '#12567B50',
+    contentsDefaultColor: '#242C2D',
     blueDark: '#021B33',
     blueLight:'#A9CFE5',
     gray: '#DFDFDF',

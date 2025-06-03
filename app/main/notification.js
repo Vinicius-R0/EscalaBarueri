@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   Navbar: {
     padding: 20,
     flexDirection: 'row',
-    backgroundColor: colors.contentsBlue,
+    backgroundColor: colors.contentsDefaultColor,
     justifyContent: 'flex-start',
     gap: 50,
     alignItems: 'center',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 
     <View style={styles.notificationContainer}>
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.onBackground, color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.onBackground, color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
       </View>
 
       <View style={styles.notificationContent}>
-        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+        <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
         <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
         <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
           sua escala foi atualizada, verifique se necessário,

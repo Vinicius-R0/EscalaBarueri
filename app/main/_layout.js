@@ -9,7 +9,7 @@ export default function MainLayout() {
   <Stack
     screenOptions={{
       headerStyle: { backgroundColor: colors.background },
-      headerTintColor: colors.defaultBlue,
+      headerTintColor: colors.defaultColor,
       headerBackVisible: false,
       headerTitle: () => (
         <View style={{
@@ -29,7 +29,7 @@ export default function MainLayout() {
               color: colors.onBackground
             }}> Secretaria de </Text>,
             <Text style={{
-              color: colors.defaultBlue,
+              color: colors.defaultColor,
               fontFamily: 'Montserrat-SemiBold'
             }}> MOBILIDADE URBANA</Text>
           </View>

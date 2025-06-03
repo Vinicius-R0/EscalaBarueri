@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   Navbar: {
     padding: 30,
     flexDirection: 'row',
-    backgroundColor: colors.contentsBlue,
+    backgroundColor: colors.contentsDefaultColor,
     justifyContent: 'space-between',
 
   },
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     margin: 20,
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 25,
-    color: colors.defaultBlue
+    color: colors.defaultColor
   },
 
   buttonContainer: {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 5,
     borderRadius: 15,
-    backgroundColor: colors.defaultBlue,
+    backgroundColor: colors.defaultColor,
   },
   notificationContainer: {
     flex: 1,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         <Text style={styles.notificationContainerTitle}> Notificações Recentes </Text>
 
         <View style={styles.notificationContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
           <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
             sua escala foi atualizada, verifique se necessário,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         </View>
 
         <View style={styles.notificationContent}>
-          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultBlue }}> Atualização </Text>
+          <Text style={{ fontFamily: 'Montserrat-SemiBold', color: colors.defaultColor }}> Atualização </Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', color: colors.onBackground }}> Olá, Rogério da Silva Oliveira</Text>
           <Text style={{ fontFamily: 'Montserrat-Regular', color: colors.onBackground }}>
             sua escala foi atualizada, verifique se necessário,

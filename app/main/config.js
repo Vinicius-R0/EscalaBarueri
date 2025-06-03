@@ -17,7 +17,7 @@ export default function Config() {
     Navbar: {
       padding: 20,
       flexDirection: 'row',
-      backgroundColor: colors.contentsBlue,
+      backgroundColor: colors.contentsDefaultColor,
       justifyContent: 'flex-start',
       gap: 50,
       alignItems: 'center'
@@ -37,7 +37,7 @@ export default function Config() {
       gap: 30
     },
     IconsBorder: {
-      borderColor: colors.defaultBlue,
+      borderColor: colors.defaultColor,
       borderWidth: 2,
       borderRadius: 100,
       padding: 10,
