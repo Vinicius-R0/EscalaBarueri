@@ -32,7 +32,7 @@ async function loadTheme() {
     setTheme(savedTheme)
   }
 }
-  function toggleTheme() {
+ async function toggleTheme() {
     let selectTheme;
  if (theme === ThemeType.light) {
   selectTheme = ThemeType.dark
@@ -41,7 +41,7 @@ async function loadTheme() {
  }
 
  setTheme(selectTheme)
-AsyncStorage.setItem('@theme', selectTheme)
+await AsyncStorage.setItem('@theme', selectTheme)
   }
 
 return(

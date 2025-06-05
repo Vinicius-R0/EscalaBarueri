@@ -1,15 +1,18 @@
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
-;
+import PopUp from '../../components/modal'
 import { SimpleLineIcons, Feather, FontAwesome, Octicons } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
 import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
+import { useState } from "react";
 
 
 
 export default function Home() {
   const route = useRouter();
-const {colors} = useTheme();;
+  const {colors} = useTheme();;
+  const [modalVisible, setModalVisible] = useState(true);
+  
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
@@ -172,6 +175,8 @@ const styles = StyleSheet.create({
         </View>
       </View>
 
+
+      <PopUp isOpen={true}/>
 
     </ScrollView>
   )

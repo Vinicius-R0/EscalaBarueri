@@ -5,8 +5,20 @@ import { useRef } from 'react';
 
 
 
+
 export default function Login() {
   const route = useRouter();
+  /*
+  const registrationRef = useRef();
+  const senhaRef = useRef();
+
+  function hundleSubmit() {
+    const user {
+      registration: registrationRef,
+      password: passwordRef
+    }
+  }
+  */
 
   return (
 
@@ -28,13 +40,17 @@ export default function Login() {
           placeholder='Número de Matrícula'
           placeholderTextColor='#12577b'
           keyboardType='numeric'
-          ref={() => useRef}>
+          //</View></View>ref={registrationRef}
+          >
         </TextInput>
 
         <TextInput style={styles.Input}
           placeholder='Senha'
           placeholderTextColor='#12577b'
-          keyboardType='numeric'>
+          keyboardType='numeric'
+          secureTextEntry
+          //ref={senhaRef}
+          >
         </TextInput>
 
         <TouchableOpacity
