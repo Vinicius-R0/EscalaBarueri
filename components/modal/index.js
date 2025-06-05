@@ -1,10 +1,8 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
-import {ThemeProvider } from '../../theme/Theme'
-import { useTheme } from 'styled-components/native';
-
+import colors from '../../theme/lighTheme'
 export default function PopUp({isOpen}) {
 
- const {colors} = useTheme();
+
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
 })
   if (isOpen) {
   return (
-    <ThemeProvider>
+
     <View style={styles.Container}>
       <View style={styles.modalView}>
 
@@ -53,13 +51,13 @@ const styles = StyleSheet.create({
         </View>
 
         <View> 
-          <Pressable style={styles.Button} onPress>
+          <Pressable style={styles.Button} onPress={() =>{isOpen(false)}}>
             <Text style={styles.ButtonText}> Confirmar</Text>
           </Pressable>
         </View>
       </View>
     </View>
-    </ThemeProvider>
+
   )
 } return null
 }

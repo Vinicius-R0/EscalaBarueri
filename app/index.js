@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
+import { View, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
 import { Link, useRouter, } from 'expo-router';
 import { useRef } from 'react';
 
@@ -43,7 +43,7 @@ export default function Login() {
           //</View></View>ref={registrationRef}
           >
         </TextInput>
-
+      
         <TextInput style={styles.Input}
           placeholder='Senha'
           placeholderTextColor='#12577b'
@@ -53,10 +53,10 @@ export default function Login() {
           >
         </TextInput>
 
-        <TouchableOpacity
-          style={styles.botaoInput} onPress={() => { route.push('/main', ) }}>
+        <Pressable
+          style={styles.botaoInput} onPress={() =>  route.push('/main' )}>
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
-        </TouchableOpacity>
+        </Pressable>
 
 
         <Link href='email' style={styles.trocarInput}>
