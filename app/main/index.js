@@ -4,13 +4,14 @@ import { SimpleLineIcons, Feather, FontAwesome, Octicons } from "@expo/vector-ic
 import { useRouter } from 'expo-router';
 import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
+
 //import { useState } from "react";
 
 
 
 export default function Home() {
   const route = useRouter();
-  const {colors} = useTheme();;
+ const { colors } = useTheme();;
  // const [modalVisible, setModalVisible] = useState(true);
   
 const styles = StyleSheet.create({

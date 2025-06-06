@@ -1,5 +1,5 @@
 export const lightTheme = {
-  colors: {
+colors: {    
     background:'#ffffff',
     onBackground: '#000000',
     defaultColor:'#12577b',
@@ -15,5 +15,6 @@ export const lightTheme = {
     contentsWhite: '#ffffff',
     contentsGray: '#DFDFDF',
     calendar: '#DFDFDF'
-  }
+}
+  
 }

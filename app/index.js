@@ -1,6 +1,6 @@
-import { View, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
+import { Alert, View, SafeAreaView, ScrollView, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput } from 'react-native';
 import { Link, useRouter, } from 'expo-router';
-import { useRef } from 'react';
+import { useState } from 'react';
 
 
 
@@ -8,21 +8,31 @@ import { useRef } from 'react';
 
 export default function Login() {
   const route = useRouter();
-  /*
-  const registrationRef = useRef();
-  const senhaRef = useRef();
+  
+  const [registration, setRegistration] = useState('');
+  const [password, setPassword] = useState('');
 
   function hundleSubmit() {
-    const user {
-      registration: registrationRef,
-      password: passwordRef
+
+    if (registration === '' || password === '') {
+      Alert.alert('Preencha todos os campos');
+      return;
     }
+
+     if (!/^\d+$/.test(password)  || !/^\d+$/.test(registration)) {
+      Alert.alert('Credenciais inválidas!', 'deve conter apenas números');
+      return
+    }
+
+    route.push('/main');
+
   }
-  */
+  
 
   return (
-
-    <View style={styles.Container}>
+   <SafeAreaView style={{ flex: 1 }}>
+    <ScrollView style={{flex: 1}}>
+      <View syle={styles.Container}>
       <ImageBackground  source={require('../assets/images/background.png')} style={styles.fundoContainer} />
 
       <View style={styles.logoImage}>
@@ -40,7 +50,8 @@ export default function Login() {
           placeholder='Número de Matrícula'
           placeholderTextColor='#12577b'
           keyboardType='numeric'
-          //</View></View>ref={registrationRef}
+          value={registration}
+          onChangeText={setRegistration}
           >
         </TextInput>
       
@@ -49,12 +60,14 @@ export default function Login() {
           placeholderTextColor='#12577b'
           keyboardType='numeric'
           secureTextEntry
-          //ref={senhaRef}
+          value={password}
+          onChangeText={setPassword}
+         
           >
         </TextInput>
 
         <Pressable
-          style={styles.botaoInput} onPress={() =>  route.push('/main' )}>
+          style={styles.botaoInput} onPress={hundleSubmit}>
           <Text style={styles.textBotaoInput}> ENTRAR </Text>
         </Pressable>
 
@@ -66,7 +79,9 @@ export default function Login() {
 
 
       </View>
-    </View>
+      </View>
+    </ScrollView>
+    </SafeAreaView>
 
   );
 }
@@ -74,7 +89,6 @@ export default function Login() {
     Container: {
       flex: 1,
       margin: 0,
-      alignItems: 'center',
     },
     fundoContainer: {
       position: 'absolute',
@@ -86,7 +100,7 @@ export default function Login() {
       alignItems: 'center',
     },
     logoImage: {
-      margin: 0,
+      marginTop: 50,
       justifyContent: 'flex-start',
       alignItems: 'center',
       flexDirection: 'column',
@@ -104,8 +118,7 @@ export default function Login() {
       textAlign: 'center',
     },
     inputContainer: {
-      flex: 1,
-      justifyContent: 'center',
+      marginTop: 20,
       alignItems: 'center',
       borderTopRightRadius: '20%',
       borderTopLeftRadius: '20%',

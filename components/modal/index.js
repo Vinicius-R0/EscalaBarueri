@@ -1,5 +1,5 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
-import colors from '../../theme/lighTheme'
+import colors from '../../theme/lightTheme'
 export default function PopUp({isOpen}) {
 
 

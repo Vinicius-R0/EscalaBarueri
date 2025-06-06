@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
-
 import { Ionicons, Feather } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import { goBack } from 'expo-router/build/global-state/routing'
 import { useTheme } from 'styled-components/native';
 
+
 export default function Profile() {
   const route = useRouter();
-const {colors} = useTheme();
+  const { colors } = useTheme();
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
           <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultColor}}>N° de Matrícula:</Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.onBackground}}>45658</Text>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultColor}}>Telefone:</Text>
-          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.onBackground}}>(11) 94987 - 5366</Text>
+          <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.onBackground}}>11 94987 - 5366</Text>
           <Text style={{ fontFamily: 'Montserrat-SemiBold', fontSize: 20, color: colors.defaultColor}}>Email:</Text>
           <Text style={{ fontFamily: 'Montserrat-Medium', fontSize: 18, marginBottom: 25, color: colors.onBackground}}>roger.oliveira66@gmail.com</Text>
 

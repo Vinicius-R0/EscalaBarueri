@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-;
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
 import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
 
+
 export default function Notification() {
   const route = useRouter();
-const {colors} = useTheme();
+const { colors } = useTheme();
 const styles = StyleSheet.create({
   Container: {
     flex: 1,

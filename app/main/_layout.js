@@ -2,15 +2,15 @@ import { Stack } from "expo-router"
 import { Image, Text, View } from "react-native"
 import { useTheme } from 'styled-components/native'
 
+
 export default function MainLayout() {
-  const {colors} = useTheme();
+ const { colors } = useTheme();
   return (
-   
-  <Stack
-    screenOptions={{
-      headerStyle: { backgroundColor: colors.background },
-      headerTintColor: colors.defaultColor,
-      headerBackVisible: false,
+    <Stack
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.background },
+        headerTintColor: colors.defaultColor,
+        headerBackVisible: false,
       headerTitle: () => (
         <View style={{
           flex: 1,
@@ -27,7 +27,8 @@ export default function MainLayout() {
             <Text style={{
               fontFamily: 'Montserrat-regular',
               color: colors.onBackground
-            }}> Secretaria de </Text>,
+            }}> Secretaria de </Text>
+
             <Text style={{
               color: colors.defaultColor,
               fontFamily: 'Montserrat-SemiBold'

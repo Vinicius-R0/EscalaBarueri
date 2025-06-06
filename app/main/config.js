@@ -6,9 +6,10 @@ import { goBack } from "expo-router/build/global-state/routing";
 import { useContext } from "react";
 import {ThemeContext, ThemeType} from '../../theme/Theme'
 
+
 export default function Config() {
   const route = useRouter();
-  const { colors } = useTheme();
+ const { colors } = useTheme();
   const styles = StyleSheet.create({
     Container: {
       flex: 1,
