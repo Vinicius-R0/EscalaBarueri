@@ -1,18 +1,18 @@
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
-//import PopUp from '../../components/modal'
+import PopUp from '../../components/modal'
 import { SimpleLineIcons, Feather, FontAwesome, Octicons } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
 import {useTheme} from 'styled-components/native';
 import { goBack } from "expo-router/build/global-state/routing";
 
-//import { useState } from "react";
+import React, { useState } from "react";
 
 
 
 export default function Home() {
   const route = useRouter();
  const { colors } = useTheme();;
- // const [modalVisible, setModalVisible] = useState(true);
+
   
 const styles = StyleSheet.create({
   Container: {
@@ -118,6 +118,9 @@ const styles = StyleSheet.create({
 })
   return (
     <ScrollView style={styles.Container}>
+
+      <PopUp />
+
       <View style={styles.Navbar}>
         <SimpleLineIcons name="logout" color={colors.onBackground} size={30} onPress={() => route.back(goBack)} />
         <Octicons name="bell" color={colors.onBackground} size={30} onPress={() => route.push('/main/notification')} />

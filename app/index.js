@@ -24,7 +24,7 @@ export default function Login() {
       return
     }
 
-    route.push('/main');
+    route.push('/main', {isOpen: true});
 
   }
   

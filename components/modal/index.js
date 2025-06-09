@@ -1,20 +1,37 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
-import colors from '../../theme/lightTheme'
-export default function PopUp({isOpen}) {
+import React, {useState} from "react";
+import { useTheme} from 'styled-components/native';
 
+
+export default function PopUp() {
+const { colors } = useTheme();
+const [isOpen, setIsOpen] = useState(true);
 
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 1000,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 20,
   },
   modalView:{
-    backgroundColor: '#fff',
-    width: '100%',
-    margin: 20,
-    borderRadius: 20,
+    width: '80%',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)', 
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.calendar,
+    padding: 20,
+    gap: 10,
+    borderRadius: 10,
   },
   header:{
     flexDirection: 'row',
@@ -24,14 +41,18 @@ const styles = StyleSheet.create({
   },
   headerTitle:{
     fontFamily: 'Montserrat-Bold',
-    fontSize: 14
+    fontSize: 16,
+    color: colors.onBackground,
   },
   ContentText:{
     fontFamily: 'Montserrat-Regular',
-    fontSize: 10
+    fontSize: 14,
+    color: colors.onBackground,
   },
   Button:{
-    backgroundColor: colors.defaultColor
+    backgroundColor: colors.defaultColor,
+    borderRadius: 10,
+    padding: 5,
   }
 })
   if (isOpen) {
@@ -46,12 +67,12 @@ const styles = StyleSheet.create({
 
         <View style={styles.Content}>
           <Text style={styles.ContentText}>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          Sua escala foi atualizada! por favor, confirme que ciente dessa atualização.
           </Text>
         </View>
 
         <View> 
-          <Pressable style={styles.Button} onPress={() =>{isOpen(false)}}>
+          <Pressable style={styles.Button} onPress={()=> setIsOpen(false) }>
             <Text style={styles.ButtonText}> Confirmar</Text>
           </Pressable>
         </View>
@@ -59,5 +80,5 @@ const styles = StyleSheet.create({
     </View>
 
   )
-} return null
+} return null;
 }
