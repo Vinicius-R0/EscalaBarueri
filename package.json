@@ -18,7 +18,7 @@
     "@react-navigation/drawer": "^7.0.0",
     "@react-navigation/native": "^7.0.3",
     "eas": "^0.1.0",
-    "expo": "53.0.10",
+    "expo": "53.0.11",
     "expo-constants": "~17.1.6",
     "expo-font": "~13.3.1",
     "expo-linking": "~7.1.5",
@@ -40,7 +40,8 @@
     "react-native-screens": "~4.11.1",
     "react-native-web": "^0.20.0",
     "styled-components": "^6.1.18",
-    "zustand": "^4.5.1"
+    "zustand": "^4.5.1",
+    "expo-dev-client": "~5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

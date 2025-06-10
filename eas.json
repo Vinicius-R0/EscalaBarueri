@@ -22,6 +22,11 @@
     },
     "production": {
       "channel": "production"
-    }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+     }
+     
   }
 }
