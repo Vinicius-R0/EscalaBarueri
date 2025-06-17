@@ -1,7 +1,7 @@
-import { Alert, View, SafeAreaView, ScrollView, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
+import { Alert, View, SafeAreaView, Platform, ScrollView, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Link, useRouter, } from 'expo-router';
 import { useState } from 'react';
-
+import supabase from '../lib/supabase'; // Adjust the import path as necessary
 
 
 
@@ -10,6 +10,28 @@ export default function Login() {
   const route = useRouter();
 
   const [registration, setRegistration] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function handleSignIn(){
+    setLoading(true);
+
+    const { data, error } = await supabase.auth.signIn({
+      registration: registration,
+      password: password,
+    })
+
+    if (error) {
+      Alert.alert('Erro ao fazer login', error.message);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(false);
+    route.push('/main', { isOpen: true });
+  }
+
+  /*const [registration, setRegistration] = useState('');
   const [password, setPassword] = useState('');
 
   function hundleSubmit() {
@@ -26,7 +48,7 @@ export default function Login() {
 
     route.push('/main', { isOpen: true });
 
-  }
+  }*/
 
 
   return (
@@ -34,8 +56,8 @@ export default function Login() {
     >
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={Plataform.OS === 'ios' ? 'padding' : undefined}
-        keyboardVErticalOffset={Plataform.OS === 'ios' ? 60 : 0}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVErticalOffset={Platform.OS === 'ios' ? 60 : 0}
       >
         <ScrollView
           contentContainerStyle={{ flexGrow: 1 }}
