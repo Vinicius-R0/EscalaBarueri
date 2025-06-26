@@ -7,7 +7,7 @@ import { useAuth } from '../hook/useAuth';
 
 export default function Login() {
   const route = useRouter();
-
+/*
   const { signIn, user } = useAuth();
   const [matricula, setMatricula] = useState('');
   const [senha, setSenha] = useState('');
@@ -20,6 +20,8 @@ export default function Login() {
       Alert.alert('Erro ao fazer login', 'Verifique suas credenciais e tente novamente.');
     }
   };
+*/
+
 /*
   const [registration, setRegistration] = useState('');
   const [password, setPassword] = useState('');
@@ -43,10 +45,10 @@ export default function Login() {
     route.push('/main', { isOpen: true });
   }
 */
-  /*const [registration, setRegistration] = useState('');
+  const [registration, setRegistration] = useState('');
   const [password, setPassword] = useState('');
 
-  function hundleSubmit() {
+  function handleSignIn() {
 
     if (registration === '' || password === '') {
       Alert.alert('Preencha todos os campos');
@@ -60,7 +62,7 @@ export default function Login() {
 
     route.push('/main', { isOpen: true });
 
-  }*/
+  }
 
 
   return (
@@ -96,8 +98,8 @@ export default function Login() {
                 placeholder='Número de Matrícula'
                 placeholderTextColor='#12577b'
                 keyboardType='numeric'
-                value={matricula}
-                onChangeText={setMatricula}
+                value={registration}
+                onChangeText={setRegistration}
               >
               </TextInput>
 
@@ -106,8 +108,8 @@ export default function Login() {
                 placeholderTextColor='#12577b'
                 keyboardType='numeric'
                 secureTextEntry
-                value={senha}
-                onChangeText={setSenha}
+                value={password}
+                onChangeText={setPassword}
               >
               </TextInput>
 
