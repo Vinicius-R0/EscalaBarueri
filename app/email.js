@@ -1,13 +1,38 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
 import { Link, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-
+import { useAuth } from '../hook/useAuth';
+import { useState } from 'react';
 
 
 
 export default function Email() {
   const route = useRouter();
- 
+  const { resetPassword, verifyEmail, user } = useAuth();
+  const [email, setEmail] = useState('');
+
+  const handleResetPassword = async () => {
+    const emailExiste = await verifyEmail(email);
+    if (!emailExiste) {
+      Alert.alert('Erro', 'E-mail não encontrado. Por favor, verifique o e-mail e tente novamente.');
+      return;
+    }
+
+    try {
+    const reset = await resetPassword(email);
+    try{
+    if (reset) {
+      Alert.alert('Sucesso', 'Instruções para redefinir a senha foram enviadas para o seu e-mail.');
+    } else {
+      Alert.alert('Erro', 'Verifique o e-mail e tente novamente.');
+    }
+  } catch (error) {
+    Alert.alert('Erro', 'Ocorreu um erro ao tentar redefinir a senha:', error.message);
+  }
+} catch (error) {
+    Alert.alert('Erro', 'Ocorreu um erro ao tentar redefinir a senha:', error.message);
+  }
+};
   return (
 
    <View style={styles.Container}>
@@ -34,10 +59,12 @@ export default function Email() {
 
         <TextInput style={styles.Input} 
         placeholder='E-mail'
-        placeholderTextColor={'#12577b'}>
+        placeholderTextColor={'#12577b'}
+        value={email}
+        onChangeText={setEmail}>
         </TextInput>
 
-        <TouchableOpacity style={styles.botaoInput} >
+        <TouchableOpacity style={styles.botaoInput} onPress={handleResetPassword}>
           <Text style={styles.textBotaoInput}> VERIFICAR </Text>
         </TouchableOpacity>
 

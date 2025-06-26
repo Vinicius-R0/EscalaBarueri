@@ -1,14 +1,26 @@
 import { Alert, View, SafeAreaView, Platform, ScrollView, Text, Pressable, Image, StyleSheet, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Link, useRouter, } from 'expo-router';
 import { useState } from 'react';
-import supabase from '../lib/supabase'; // Adjust the import path as necessary
-
+import { useAuth } from '../hook/useAuth'; 
 
 
 
 export default function Login() {
   const route = useRouter();
 
+  const { signIn, user } = useAuth();
+  const [matricula, setMatricula] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleSignIn = async () => {
+    const userLogado = await signIn(matricula, senha);
+    if (userLogado) {
+      route.push('/main', { isOpen: true });
+    } else {
+      Alert.alert('Erro ao fazer login', 'Verifique suas credenciais e tente novamente.');
+    }
+  };
+/*
   const [registration, setRegistration] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -30,7 +42,7 @@ export default function Login() {
     setLoading(false);
     route.push('/main', { isOpen: true });
   }
-
+*/
   /*const [registration, setRegistration] = useState('');
   const [password, setPassword] = useState('');
 
@@ -52,18 +64,18 @@ export default function Login() {
 
 
   return (
-    <SafeAreaView style={{ flex: 1 }}
-    >
+  
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVErticalOffset={Platform.OS === 'ios' ? 60 : 0}
       >
-        <ScrollView
+        <ScrollView style={{ flex: 1 }}
           contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps='handled'
+
         >
-          <View>
+          <View style={{ flex: 1}}>
             <ImageBackground
               source={require('../assets/images/background.png')}
               style={styles.fundoContainer}
@@ -84,8 +96,8 @@ export default function Login() {
                 placeholder='Número de Matrícula'
                 placeholderTextColor='#12577b'
                 keyboardType='numeric'
-                value={registration}
-                onChangeText={setRegistration}
+                value={matricula}
+                onChangeText={setMatricula}
               >
               </TextInput>
 
@@ -94,13 +106,13 @@ export default function Login() {
                 placeholderTextColor='#12577b'
                 keyboardType='numeric'
                 secureTextEntry
-                value={password}
-                onChangeText={setPassword}
+                value={senha}
+                onChangeText={setSenha}
               >
               </TextInput>
 
               <Pressable
-                style={styles.botaoInput} onPress={hundleSubmit}>
+                style={styles.botaoInput} onPress={handleSignIn}>
                 <Text style={styles.textBotaoInput}> ENTRAR </Text>
               </Pressable>
 
@@ -113,7 +125,7 @@ export default function Login() {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    
 
   );
 }
