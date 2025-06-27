@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, TextInput, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, useRouter } from 'expo-router';
-
+import {colors} from '../theme/lightTheme';
 
 
 

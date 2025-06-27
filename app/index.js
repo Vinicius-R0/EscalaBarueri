@@ -2,6 +2,7 @@ import { Alert, View, SafeAreaView, Platform, ScrollView, Text, Pressable, Image
 import { Link, useRouter, } from 'expo-router';
 import { useState } from 'react';
 import { useAuth } from '../hook/useAuth'; 
+import {colors} from '../theme/lightTheme';
 
 
 
@@ -96,7 +97,7 @@ export default function Login() {
 
               <TextInput style={styles.Input}
                 placeholder='Número de Matrícula'
-                placeholderTextColor='#12577b'
+                placeholderTextColor={'#12577b'}
                 keyboardType='numeric'
                 value={registration}
                 onChangeText={setRegistration}
@@ -105,7 +106,7 @@ export default function Login() {
 
               <TextInput style={styles.Input}
                 placeholder='Senha'
-                placeholderTextColor='#12577b'
+                placeholderTextColor={'#12577b'}
                 keyboardType='numeric'
                 secureTextEntry
                 value={password}

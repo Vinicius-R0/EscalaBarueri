@@ -3,6 +3,7 @@ import { Link, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../hook/useAuth';
 import { useState } from 'react';
+import {colors} from '../theme/lightTheme';
 
 
 
